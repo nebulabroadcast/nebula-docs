@@ -27,10 +27,10 @@ jobs:
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
 
       - name: Install dependencies
-        run: uv pip install -r pyproject.toml
+        run: uv pip install -r pyproject.toml --system
 
       - name: Build site
-        run: uv run mkdocs build
+        run: mkdocs build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
