@@ -1,0 +1,37 @@
+site_name: Nebula Broadcast
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nebulabroadcast
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/3UxJ4WKfy9
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/nebulabroadcast
+    - icon: fontawesome/regular/envelope
+      link: mailto:info@nebulabroadcast.com
+
+copyright: Copyright &copy; 2013 - 2025 imm studios, z.s.
+
+theme:
+  name: material
+
+  hide:
+    - footer
+
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+  - mermaid2
+
+extra_css:
+  - stylesheets/main.css
