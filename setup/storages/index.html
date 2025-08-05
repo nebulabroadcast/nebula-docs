@@ -12,7 +12,7 @@
         <link rel="prev" href="../casparcg/">
       
       
-        <link rel="next" href="../../system/importing-media/">
+        <link rel="next" href="../watchfolders/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -610,6 +610,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Local storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -621,6 +636,15 @@
   
     <nav class="md-nav" aria-label="Shared storages">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Example
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#docker-considerations" class="md-nav__link">
@@ -650,51 +674,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    System
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            System
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -702,35 +681,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/importing-media/" class="md-nav__link">
+      <a href="../watchfolders/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Importing media
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../system/remote-storages/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Remote storages
+    Watch folders
     
   </span>
   
@@ -872,6 +828,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Local storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -883,6 +854,15 @@
   
     <nav class="md-nav" aria-label="Shared storages">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Example
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#docker-considerations" class="md-nav__link">
@@ -1000,12 +980,52 @@ its configuration is stored in the database and Nebula attempts to mount it on e
 but rather expects it to be mounted at the specified path. Local storages don't need to be explicitly defined in the database.</p>
 <p>This is useful for single-node deployments, where a local directory is bind-mounted to the node's <code>/mnt/{site_name}_{id}</code> directory
 as a Docker volume or a Kubernetes Persistent Volume (PV).</p>
+<h4 id="configuration-example">Configuration Example</h4>
+<p>In <code>docker-compose.yml</code>, you can define a local storage by adding a volume mount to the backend and worker services:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nebula-storage:/mnt/nebula_01</span>
+
+<span class="w">  </span><span class="nt">worker</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nebula-storage:/mnt/nebula_01</span>
+</code></pre></div>
 <h3 id="shared-storages">Shared storages</h3>
 <p>Samba or NFS storages require a valid configuration in the settings template. </p>
+<p>Before you begin, you should have the following:</p>
+<ul>
+<li>A network share that you want to use for Nebula storage</li>
+<li>Access to the server where Nebula is installed</li>
+<li>Basic knowledge of Docker and Docker Compose</li>
+</ul>
+<h4 id="configuration-example_1">Configuration Example</h4>
+<p>In the settings directory of the Nebula repository, create <code>storages.py</code> file with the following contents (modify the values as needed):</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nebula.settings.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">StorageSettings</span>
+
+<span class="n">STORAGES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">StorageSettings</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;production&quot;</span><span class="p">,</span>
+        <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;samba&quot;</span><span class="p">,</span>
+        <span class="n">path</span><span class="o">=</span><span class="s2">&quot;//server/share&quot;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;login&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Then run <code>make setup</code> to apply the settings.</p>
 <h4 id="docker-considerations">Docker considerations</h4>
 <p>In order to mount shared storages in Docker, the container must be configured to run in "privileged mode". 
 This setting grants the container extensive access to the host's resources, including the crucial ability to mount external volumes.</p>
 <p>Specifically, the <code>docker-compose.yml</code> configuration for Nebula server and nodes should include <code>privileged: true</code> directive under the service definition. </p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_ADMIN</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DAC_READ_SEARCH</span>
+<span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 
 
 

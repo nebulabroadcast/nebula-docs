@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../importing-media/">
+        <link rel="prev" href="../storages/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Remote storages - Nebula Broadcast</title>
+        <title>Watch folders - Nebula Broadcast</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#remote-storages" class="md-skip">
+        <a href="#watch-folders" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Remote storages
+              Watch folders
             
           </span>
         </div>
@@ -395,18 +395,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -422,7 +424,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Setup
@@ -436,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../setup/casparcg/" class="md-nav__link">
+      <a href="../casparcg/" class="md-nav__link">
         
   
   
@@ -459,82 +461,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../setup/storages/" class="md-nav__link">
+      <a href="../storages/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Nebula storages
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    System
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            System
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../importing-media/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Importing media
     
   </span>
   
@@ -566,7 +498,7 @@
   
   
   <span class="md-ellipsis">
-    Remote storages
+    Watch folders
     
   </span>
   
@@ -579,7 +511,7 @@
   
   
   <span class="md-ellipsis">
-    Remote storages
+    Watch folders
     
   </span>
   
@@ -602,29 +534,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#minimal-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Minimal configuration
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-docker-compose" class="md-nav__link">
+  <a href="#customizing-watch-folder-behavior" class="md-nav__link">
     <span class="md-ellipsis">
-      Updating docker-compose
+      Customizing watch folder behavior
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#define-a-remote-storage-in-nebula" class="md-nav__link">
+  <a href="#advanced-scripting" class="md-nav__link">
     <span class="md-ellipsis">
-      Define a remote storage in Nebula
+      Advanced scripting
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Advanced scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-creating-a-custom-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Creating a Custom Identifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -671,29 +618,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#minimal-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Minimal configuration
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-docker-compose" class="md-nav__link">
+  <a href="#customizing-watch-folder-behavior" class="md-nav__link">
     <span class="md-ellipsis">
-      Updating docker-compose
+      Customizing watch folder behavior
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#define-a-remote-storage-in-nebula" class="md-nav__link">
+  <a href="#advanced-scripting" class="md-nav__link">
     <span class="md-ellipsis">
-      Define a remote storage in Nebula
+      Advanced scripting
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Advanced scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-creating-a-custom-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Creating a Custom Identifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -713,55 +675,96 @@
 
 
 
-<h1 id="remote-storages">Remote storages</h1>
-<p>By default, nebula-example uses local storage on the server where it is installed (<code>storage</code> directory mounted directly to the docker container). 
-However, you can also configure Nebula to use network storage for your media files. </p>
-<p>In this tutorial, we will show you how to set up and configure network storage for Nebula.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Before you begin, you should have the following:</p>
-<ul>
-<li>A network share that you want to use for Nebula storage</li>
-<li>Access to the server where Nebula is installed</li>
-<li>Basic knowledge of Docker and Docker Compose</li>
-</ul>
-<h2 id="updating-docker-compose">Updating docker-compose</h2>
-<p>In the docker-compose.yml file, remove the volume definitions for both the backend and server services that point to the storages directory:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># Remove this line</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./storages:/mnt/nebula_01</span>
-
-<span class="w">  </span><span class="nt">worker</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># Remove this line</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./storages:/mnt/nebula_01</span>
+<h1 id="watch-folders">Watch folders</h1>
+<p>Using watch folders is the most convenient way to import media files into Nebula.</p>
+<p>Watch folders allow you to automatically create assets in Nebula when new media files are added to specific directories. </p>
+<p>This eliminates the need for manual asset creation and ensures that your media library is always up-to-date.</p>
+<p>To use watch folders, use a single instance of the <code>watch</code> service. 
+Service configuration may contain one or more watch folders.</p>
+<h3 id="minimal-configuration">Minimal configuration</h3>
+<p>The following example shows a minimal configuration for a watch folder service,
+monitoring two directories. For each detected file, an asset will be created in the
+default "Incoming" nebula folder (ID 12).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;service&gt;</span>
+<span class="w">    </span><span class="nt">&lt;folder</span><span class="w"> </span><span class="na">id_storage=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;media.dir/movies&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;folder</span><span class="w"> </span><span class="na">id_storage=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;media.dir/episodes&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
 </code></pre></div>
-<p>Docker containers must be privileged in order to be allowed to mount samba storages:
-Add the following lines to their definition in the <code>docker-compose.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">cap_add</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_ADMIN</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DAC_READ_SEARCH</span>
-<span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<h3 id="customizing-watch-folder-behavior">Customizing watch folder behavior</h3>
+<p>The behavior of each watch folder can be customized using the following attributes within the <code>&lt;folder&gt;</code> tag.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id_storage</td>
+<td>required</td>
+<td>-</td>
+<td>Nebula storage id.</td>
+</tr>
+<tr>
+<td>path</td>
+<td>required</td>
+<td>-</td>
+<td>The path to the directory that will be monitored.</td>
+</tr>
+<tr>
+<td>id_folder</td>
+<td>optional</td>
+<td>12</td>
+<td>The ID of the Nebula folder where new assets will be created.</td>
+</tr>
+<tr>
+<td>recursive</td>
+<td>optional</td>
+<td>TRUE</td>
+<td>If true, the watch folder will scan subdirectories.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>optional</td>
+<td>FALSE</td>
+<td>If true, files and folders beginning with a . will be ignored.</td>
+</tr>
+<tr>
+<td>quarantine_time</td>
+<td>optional</td>
+<td>10</td>
+<td>The number of seconds a file must remain unchanged before it is processed. This prevents incomplete file transfers from being imported.</td>
+</tr>
+<tr>
+<td>case_sensitive_exts</td>
+<td>optional</td>
+<td>FALSE</td>
+<td>If true, file extensions will be matched with case sensitivity.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advanced-scripting">Advanced scripting</h3>
+<p>For more advanced workflows, you can execute a Python script to modify the metadata of a newly created asset. 
+This is useful for tasks like loading metadata from a sidecar file or generating a custom asset identifier.</p>
+<p>The script is defined within a <code>&lt;post&gt;</code> tag inside the <code>&lt;folder&gt;</code> tag. 
+The newly created asset is available as the asset variable.</p>
+<h4 id="example-creating-a-custom-identifier">Example: Creating a Custom Identifier</h4>
+<p>This example uses the <code>shortuuid</code> library to generate a unique, 
+short identifier for the asset's <code>id/main</code> metadata field.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;service&gt;</span>
+<span class="w">  </span><span class="nt">&lt;folder</span><span class="w"> </span><span class="na">id_storage=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;media.dir&quot;</span><span class="w"> </span><span class="na">recursive=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">id_folder=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;post&gt;</span>
+<span class="cp">&lt;![CDATA[</span>
+<span class="cp">import shortuuid</span>
+<span class="cp">asset[&quot;id/main&quot;] = shortuuid.uuid()</span>
+<span class="cp">]]&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/post&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/folder&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
 </code></pre></div>
-<h2 id="define-a-remote-storage-in-nebula">Define a remote storage in Nebula</h2>
-<p>In the settings directory of the Nebula repository, create a storages.py file with the following contents:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nebula.settings.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">StorageSettings</span>
-
-<span class="n">STORAGES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">StorageSettings</span><span class="p">(</span>
-        <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;production&quot;</span><span class="p">,</span>
-        <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;samba&quot;</span><span class="p">,</span>
-        <span class="n">path</span><span class="o">=</span><span class="s2">&quot;//server/share&quot;</span><span class="p">,</span>
-        <span class="n">options</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;login&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">)</span>
-<span class="p">]</span>
-</code></pre></div>
-<p>Start the stack again with <code>docker compose up</code></p>
 
 
 
