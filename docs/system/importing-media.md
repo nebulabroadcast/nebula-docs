@@ -1,13 +1,13 @@
 Importing media
 ===============
 
-Watchfolders
-------------
+Watch folders
+-------------
 
-The easiest way to import media files to nebula is to use watchfolders. 
+The easiest way to import media files to nebula is to use watch folders. 
 That way, new assets are created automatically for each file uploaded to 
-a defined directory. To use watchfolders, use a single instance of the `watch`
-service. Service configuration may contain one or more watchfolders.
+a defined directory. To use watch folders, use a single instance of the `watch`
+service. Service configuration may contain one or more watch folders.
 
 ```xml
 <service>
@@ -40,7 +40,7 @@ asset["id/main"] = shortuuid.uuid()
 </service>
 ```
 
-If you are using watchfolders, a media file (quite obviously) must exist prior to the creation of the asset.
+If you are using watch folders, a media file (quite obviously) must exist prior to the creation of the asset.
 
 Manual asset creation
 ---------------------

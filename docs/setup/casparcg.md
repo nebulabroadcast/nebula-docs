@@ -1,6 +1,25 @@
 CasparCG playout
 ================
 
+CasparCG Server is a professional-grade, open-source software available for both Windows and Linux, 
+dedicated to playing out graphics, audio, and video to multiple outputs.
+
+Its long-standing track record, having been in 24/7 broadcast production since 2006, 
+attests to its stability and reliability in mission-critical environments.
+
+Nebula leverages this inherent robustness for its on-air operations, 
+ensuring that the playout layer is as dependable as the automation system itself. 
+
+Furthermore, Nebula’s playout control service is designed with a plug-in interface, 
+enabling the execution of secondary events such as character generation (CG), 
+router control, studio control, and recorder control.
+
+Prerequisites
+-------------
+
+
+
+
 Controlling CasparCG from Docker
 --------------------------------
 
