@@ -72,9 +72,55 @@ but rather expects it to be mounted at the specified path. Local storages don't 
 This is useful for single-node deployments, where a local directory is bind-mounted to the node's `/mnt/{site_name}_{id}` directory
 as a Docker volume or a Kubernetes Persistent Volume (PV).
 
+
+#### Configuration Example
+
+In `docker-compose.yml`, you can define a local storage by adding a volume mount to the backend and worker services:
+
+```yaml
+services:
+  backend:
+    volumes:
+      - ./nebula-storage:/mnt/nebula_01
+      
+  worker:
+    volumes:
+      - ./nebula-storage:/mnt/nebula_01
+```
+
 ### Shared storages
 
 Samba or NFS storages require a valid configuration in the settings template. 
+
+Before you begin, you should have the following:
+
+ - A network share that you want to use for Nebula storage
+ - Access to the server where Nebula is installed
+ - Basic knowledge of Docker and Docker Compose
+
+#### Configuration Example
+
+In the settings directory of the Nebula repository, create `storages.py` file with the following contents (modify the values as needed):
+
+```python
+from nebula.settings.models import StorageSettings
+
+STORAGES = [
+    StorageSettings(
+        id=1,
+        name="production",
+        protocol="samba",
+        path="//server/share",
+        options={
+            "login": "user",
+            "password": "password",
+        },
+    )
+]
+```
+
+Then run `make setup` to apply the settings.
+
 
 #### Docker considerations
 
@@ -83,3 +129,9 @@ This setting grants the container extensive access to the host's resources, incl
 
 Specifically, the `docker-compose.yml` configuration for Nebula server and nodes should include `privileged: true` directive under the service definition. 
 
+```yaml
+    cap_add:
+        - SYS_ADMIN
+        - DAC_READ_SEARCH
+    privileged: true
+```
