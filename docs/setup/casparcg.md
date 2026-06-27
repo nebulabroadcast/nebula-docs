@@ -18,8 +18,6 @@ Prerequisites
 -------------
 
 
-
-
 Controlling CasparCG from Docker
 --------------------------------
 
@@ -66,10 +64,13 @@ channel1 = PlayoutChannelSettings(
         "caspar_osc_port": 6251,
         "caspar_channel": 1,
         "caspar_feed_layer": 10,
+        "live_source": "DECKLINK 2",
     },
 )
 
 # Configure second channel similarly
+
+channel2 = ...
 
 CHANNELS = [channel1, channel2]
 ```
@@ -95,12 +96,14 @@ And we create configuration files for both services:
 
 
 In the `docker-compose.yml` we setup UDP port forwarding for both ports
-we specified in the channels configuration to the host running the play services:
+we specified in the channels configuration to the worker running the play services:
 
 ```yaml
-ports:
-  - "6251:6251/udp"
-  - "6252:6252/udp"
+services:
+  worker:
+    ports:
+      - "6251:6251/udp"
+      - "6252:6252/udp"
 ```
 
 And last, in the `casparcg.config` file, we enable sending OSC messages to the host.
@@ -125,7 +128,7 @@ Media
 
 Our best practice is to have `media.dir` directory
 on the playout server data drive (e.g. `d:\media.dir` on Windows ), then we share the media drive,
-so it's accesible as for example `\\playoutserver\playout`
+so it's accessible as for example `\\playoutserver\playout`
 
 In `casparcg.config` set the `<media-path>` to the local path to the directory.
 
@@ -158,3 +161,12 @@ storage automatically based on the schedule. By default it start the job 24 hour
 Only one PSM instance is needed per installation as it handles all configured playout channels.
 No further configuration of the service is required.
 
+
+Live sources
+------------
+
+When "LIVE" item is added to a rundown, the playout controller starts playing the source defined in the channel configuration `live_source` parameter. 
+This can be a decklink input, NDI source, or any other source supported by CasparCG. 
+
+Live source cannot be changed during runtime - only one live source can be defined per channel. If you need to switch between multiple live sources, 
+you can use a switcher device (e.g., Blackmagic ATEM) for SDI or prepare your source on another CasparCG channel and use a route producer as live source.
