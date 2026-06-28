@@ -21,11 +21,14 @@
     
     
       
-        <title>Video preview - Nebula Broadcast</title>
+        <title>Video Preview & Trimming - Nebula Broadcast</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -64,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#poster-frame" class="md-skip">
+        <a href="#video-preview-trimming" class="md-skip">
           Skip to content
         </a>
       
@@ -76,9 +86,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -100,12 +108,38 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Video preview
+              Video Preview & Trimming
             
           </span>
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -162,6 +196,116 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../basics/concepts/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/docker/" class="md-tabs__link">
+          
+  
+  
+  Deployment & Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../setup/configuring_nebula/" class="md-tabs__link">
+          
+  
+  
+  Configuration Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../linear-broadcasting/" class="md-tabs__link">
+          
+  
+  
+  User & Operations Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -175,8 +319,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -203,7 +349,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Welcome
   
 
     
@@ -226,6 +372,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -241,7 +392,7 @@
   <span class="md-ellipsis">
     
   
-    Basics
+    Getting Started
   
 
     
@@ -257,7 +408,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Basics
+    Getting Started
   
 
           </label>
@@ -277,7 +428,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula Concepts
+    Core Concepts
   
 
     
@@ -305,7 +456,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula interface
+    User Interface
   
 
     
@@ -336,6 +487,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -351,7 +507,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    Deployment & Installation
   
 
     
@@ -367,7 +523,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Installation
+    Deployment & Installation
   
 
           </label>
@@ -387,7 +543,7 @@
   <span class="md-ellipsis">
     
   
-    Docker based installation
+    Docker Setup
   
 
     
@@ -418,6 +574,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -433,7 +594,7 @@
   <span class="md-ellipsis">
     
   
-    Setup
+    Configuration Guide
   
 
     
@@ -449,39 +610,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Setup
+    Configuration Guide
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../setup/casparcg/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CasparCG playout
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -497,7 +630,7 @@
   <span class="md-ellipsis">
     
   
-    Configuring Nebula
+    Settings System
   
 
     
@@ -525,7 +658,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula storages
+    Storage Configuration
   
 
     
@@ -553,7 +686,35 @@
   <span class="md-ellipsis">
     
   
-    Watch folders
+    Watch Folders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/casparcg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CasparCG Playout
   
 
     
@@ -586,22 +747,30 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Usage
+    User & Operations Guide
   
 
     
@@ -617,7 +786,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Usage
+    User & Operations Guide
   
 
           </label>
@@ -637,7 +806,7 @@
   <span class="md-ellipsis">
     
   
-    Linear broadcasting
+    Linear Playout Scheduling
   
 
     
@@ -664,6 +833,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -672,7 +843,7 @@
   <span class="md-ellipsis">
     
   
-    Video preview
+    Video Preview & Trimming
   
 
     
@@ -690,7 +861,7 @@
   <span class="md-ellipsis">
     
   
-    Video preview
+    Video Preview & Trimming
   
 
     
@@ -706,6 +877,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -717,7 +890,7 @@
   <a href="#poster-frame" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Poster frame
+        Poster Frame
       
     </span>
   </a>
@@ -750,7 +923,7 @@
   <a href="#keyboard-shortcuts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keyboard shortcuts
+        Keyboard Shortcuts
       
     </span>
   </a>
@@ -790,6 +963,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -801,7 +976,7 @@
   <a href="#poster-frame" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Poster frame
+        Poster Frame
       
     </span>
   </a>
@@ -834,7 +1009,7 @@
   <a href="#keyboard-shortcuts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keyboard shortcuts
+        Keyboard Shortcuts
       
     </span>
   </a>
@@ -858,82 +1033,88 @@
 
 
 
-  <h1>Video preview</h1>
-
-<h2 id="poster-frame">Poster frame</h2>
-<p>A poster frame is a representative frame taken from the video file, which can be used as a thumbnail
-(for example in VOD archive). To set a poster frame, navigate to the desired frame and click the <em>Set poster frame</em> button
-in the toolbar.</p>
+<h1 id="video-preview-trimming">Video Preview &amp; Trimming</h1>
+<p>The video preview player provides the asset detail interface with tools to view low-resolution proxies, define poster frames, trim clips, and generate sub-clips.</p>
+<hr />
+<h2 id="poster-frame">Poster Frame</h2>
+<p>A <strong>poster frame</strong> is a representative frame extracted from the video file to serve as its search thumbnail (for example, in a Video-on-Demand archive).
+* <strong>How to set:</strong> Navigate to the desired frame in the player timeline, then click the <strong>Set poster frame</strong> button on the toolbar.</p>
+<hr />
 <h2 id="trimming">Trimming</h2>
-<p>Each video asset can be trimmed by setting IN and OUT points and clicking <em>save marks</em> button from the toolbar.
-When dragged to the playlist, only the selected part of the video will be used. VOD transcoders also can be configured
-to use only the selected region.</p>
+<p>Trimming allows you to define custom playback start and end points for an asset without altering the source file:
+1. Seek to the desired start point and set the <strong>IN</strong> mark.
+2. Seek to the desired end point and set the <strong>OUT</strong> mark.
+3. Click <strong>Save Marks</strong>.</p>
+<p>When you drag the asset onto a playlist, only the region between the IN and OUT marks will be played. VOD transcoders also respect these marks to crop output files.</p>
+<hr />
 <h2 id="sub-clips">Sub-clips</h2>
-<p>Sub-clip creation is a non-destructive way to split a video file to several regions which may be used independently
-in playlists. Subclips may overlap. To create a sub-clip, set IN and OUT points on the timeline and click the "Create sub-clip"
-button from the toolbar. Existing sub-clips can be modified, renamed by clicking the <em>Manage sub-clips</em> button.</p>
-<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
-<p>Keyboard shortcuts are derived from Avid Media Composer and other non-linear editing software,
-so they should be familiar to video editors.</p>
+<p>Sub-clips allow you to non-destructively split a single parent media asset into multiple child clips (e.g. news segments, individual songs from a concert video). Sub-clips can overlap.</p>
+<ul>
+<li><strong>Create Sub-clip:</strong> Set your <strong>IN</strong> and <strong>OUT</strong> marks, then click <strong>Create sub-clip</strong> in the toolbar.</li>
+<li><strong>Manage Sub-clips:</strong> Rename, modify, or delete existing segments by clicking <strong>Manage sub-clips</strong>.</li>
+</ul>
+<hr />
+<h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+<p>The player interface keyboard shortcuts are derived from standard non-linear editors (like Avid Media Composer or Adobe Premiere), ensuring a familiar layout for video editors:</p>
 <table>
 <thead>
 <tr>
-<th>Shortcut</th>
-<th>Description</th>
+<th style="text-align: center;">Shortcut</th>
+<th>Action / Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1, J</td>
-<td>Seek previous 5 frames</td>
+<td style="text-align: center;"><kbd>1</kbd> or <kbd>J</kbd></td>
+<td>Seek backward 5 frames</td>
 </tr>
 <tr>
-<td>2, L</td>
-<td>Seek next 5 frames</td>
+<td style="text-align: center;"><kbd>2</kbd> or <kbd>L</kbd></td>
+<td>Seek forward 5 frames</td>
 </tr>
 <tr>
-<td>3, Left</td>
-<td>Seek to the previous frame</td>
+<td style="text-align: center;"><kbd>3</kbd> or <kbd>Left</kbd></td>
+<td>Seek backward 1 frame (fine tuning)</td>
 </tr>
 <tr>
-<td>4, Right</td>
-<td>Seek to the next frame</td>
+<td style="text-align: center;"><kbd>4</kbd> or <kbd>Right</kbd></td>
+<td>Seek forward 1 frame (fine tuning)</td>
 </tr>
 <tr>
-<td>A, Home</td>
-<td>Go to start</td>
+<td style="text-align: center;"><kbd>A</kbd> or <kbd>Home</kbd></td>
+<td>Seek to the beginning of the file</td>
 </tr>
 <tr>
-<td>S, End</td>
-<td>Go to end</td>
+<td style="text-align: center;"><kbd>S</kbd> or <kbd>End</kbd></td>
+<td>Seek to the end of the file</td>
 </tr>
 <tr>
-<td>Q</td>
-<td>Go to in</td>
+<td style="text-align: center;"><kbd>Q</kbd></td>
+<td>Go directly to the <strong>IN</strong> mark</td>
 </tr>
 <tr>
-<td>W</td>
-<td>Go to out</td>
+<td style="text-align: center;"><kbd>W</kbd></td>
+<td>Go directly to the <strong>OUT</strong> mark</td>
 </tr>
 <tr>
-<td>E, I</td>
-<td>Mark in</td>
+<td style="text-align: center;"><kbd>E</kbd> or <kbd>I</kbd></td>
+<td>Set <strong>IN</strong> mark</td>
 </tr>
 <tr>
-<td>R, O</td>
-<td>Mark out</td>
+<td style="text-align: center;"><kbd>R</kbd> or <kbd>O</kbd></td>
+<td>Set <strong>OUT</strong> mark</td>
 </tr>
 <tr>
-<td>D</td>
-<td>Clear in</td>
+<td style="text-align: center;"><kbd>D</kbd></td>
+<td>Clear the <strong>IN</strong> mark</td>
 </tr>
 <tr>
-<td>F</td>
-<td>Clear out</td>
+<td style="text-align: center;"><kbd>F</kbd></td>
+<td>Clear the <strong>OUT</strong> mark</td>
 </tr>
 <tr>
-<td>Space, K</td>
-<td>Play/pause</td>
+<td style="text-align: center;"><kbd>Space</kbd> or <kbd>K</kbd></td>
+<td>Toggle Play / Pause</td>
 </tr>
 </tbody>
 </table>
@@ -957,6 +1138,12 @@ so they should be familiar to video editors.</p>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -966,7 +1153,7 @@ so they should be familiar to video editors.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2013 - 2025 imm studios, z.s.
+      Copyright &copy; 2013 - 2026 imm studios, z.s.
     </div>
   
   
@@ -1031,7 +1218,7 @@ so they should be familiar to video editors.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

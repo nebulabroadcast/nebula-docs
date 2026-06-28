@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../casparcg/">
+        <link rel="prev" href="../../installation/docker/">
       
       
         <link rel="next" href="../storages/">
@@ -23,11 +23,14 @@
     
     
       
-        <title>Configuring Nebula - Nebula Broadcast</title>
+        <title>Settings System - Nebula Broadcast</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,7 +60,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -78,9 +88,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -102,12 +110,38 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuring Nebula
+              Settings System
             
           </span>
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -164,6 +198,116 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../basics/concepts/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/docker/" class="md-tabs__link">
+          
+  
+  
+  Deployment & Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Configuration Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../usage/linear-broadcasting/" class="md-tabs__link">
+          
+  
+  
+  User & Operations Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -177,8 +321,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -205,7 +351,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Welcome
   
 
     
@@ -228,6 +374,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -243,7 +394,7 @@
   <span class="md-ellipsis">
     
   
-    Basics
+    Getting Started
   
 
     
@@ -259,7 +410,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Basics
+    Getting Started
   
 
           </label>
@@ -279,7 +430,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula Concepts
+    Core Concepts
   
 
     
@@ -307,7 +458,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula interface
+    User Interface
   
 
     
@@ -338,6 +489,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -353,7 +509,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    Deployment & Installation
   
 
     
@@ -369,7 +525,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Installation
+    Deployment & Installation
   
 
           </label>
@@ -389,7 +545,7 @@
   <span class="md-ellipsis">
     
   
-    Docker based installation
+    Docker Setup
   
 
     
@@ -422,22 +578,30 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Setup
+    Configuration Guide
   
 
     
@@ -453,39 +617,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Setup
+    Configuration Guide
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../casparcg/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CasparCG playout
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -503,6 +639,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings System
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -510,7 +664,7 @@
   <span class="md-ellipsis">
     
   
-    Configuring Nebula
+    Settings System
   
 
     
@@ -519,6 +673,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applying-configuration-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying Configuration Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Files Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -539,7 +734,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula storages
+    Storage Configuration
   
 
     
@@ -567,7 +762,35 @@
   <span class="md-ellipsis">
     
   
-    Watch folders
+    Watch Folders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casparcg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CasparCG Playout
   
 
     
@@ -598,6 +821,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -613,7 +841,7 @@
   <span class="md-ellipsis">
     
   
-    Usage
+    User & Operations Guide
   
 
     
@@ -629,7 +857,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Usage
+    User & Operations Guide
   
 
           </label>
@@ -649,7 +877,7 @@
   <span class="md-ellipsis">
     
   
-    Linear broadcasting
+    Linear Playout Scheduling
   
 
     
@@ -677,7 +905,7 @@
   <span class="md-ellipsis">
     
   
-    Video preview
+    Video Preview & Trimming
   
 
     
@@ -718,6 +946,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applying-configuration-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying Configuration Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Files Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -734,20 +992,66 @@
 
 
 <h1 id="configuring-nebula">Configuring Nebula</h1>
-<p>Nebula configuration is managed through a settings template, which is a Python module that defines various configuration parameters for the system. This template allows you to customize Nebula's behavior to suit your specific deployment needs.</p>
-<p>All settings templates are stored in the settings directory and you can apply them by running <code>make setup</code> in the root of the Nebula repository. 
-This command will copy the settings template to the database and apply it to the system.</p>
-<p>The following files are expected (but not required) to be present in the settings directory:</p>
-<ul>
-<li><code>settings.py</code>: The main settings template that defines the configuration for the Nebula instance.</li>
-<li><code>storages.py</code>: Defines the storage configurations for the Nebula instance.</li>
-<li><code>services.py</code>: Defines the service configurations for the Nebula instance.</li>
-<li><code>actions.py</code>: Defines actions such as transcoding, copying, or moving media files.</li>
-<li><code>folders.py</code>: Defines what folders are available in the Nebula instance and their properties.</li>
-<li><code>cs.py</code>: Additional classification schemes for assets, if needed.</li>
-<li><code>meta_types.py</code>: Defines custom metadata types for assets, if needed.</li>
-<li><code>views.py</code>: Defines custom views for browsing assets.</li>
-</ul>
+<p>Nebula's configuration is managed through a <strong>settings template</strong>, which is a set of Python modules that define various system, storage, and service parameters. This template allows you to customize Nebula's behavior to suit your specific broadcast requirements.</p>
+<p>All settings templates are stored in the <code>settings/</code> directory at the root of the repository or deployment path.</p>
+<hr />
+<h2 id="applying-configuration-changes">Applying Configuration Changes</h2>
+<p>Whenever you modify settings templates, you must apply them to the system's database. To do this, execute <code>make setup</code> in the root of the Nebula repository (or use the Docker Compose equivalent):</p>
+<p>=== "Bare Metal"
+    <div class="highlight"><pre><span></span><code>make<span class="w"> </span>setup
+</code></pre></div></p>
+<p>=== "Docker Compose"
+    <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>backend<span class="w"> </span>make<span class="w"> </span>setup
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">What does <code>make setup</code> do?</p>
+<p>This command compiles the Python settings templates, serializes them, stores the configuration in the PostgreSQL database, and signals the backend and active workers to reload their configurations.</p>
+</div>
+<hr />
+<h2 id="configuration-files-map">Configuration Files Map</h2>
+<p>The following files are expected (but not required) to be present in your <code>settings/</code> directory:</p>
+<table>
+<thead>
+<tr>
+<th>Filename</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings.py</code></td>
+<td>The main settings template defining system-wide configurations, channel mappings, and timezones.</td>
+</tr>
+<tr>
+<td><code>storages.py</code></td>
+<td>Defines storage volumes (production, playout, local, or shared Samba/NFS mounts).</td>
+</tr>
+<tr>
+<td><code>services.py</code></td>
+<td>Registers the system services (transcoders, monitors, playout controllers) assigned to workers.</td>
+</tr>
+<tr>
+<td><code>actions.py</code></td>
+<td>Defines specific actions such as automated transcoding, copying, or moving files.</td>
+</tr>
+<tr>
+<td><code>folders.py</code></td>
+<td>Customizes asset folders (e.g. Movies, Songs, Promos) and fields shown in metadata editors.</td>
+</tr>
+<tr>
+<td><code>cs.py</code></td>
+<td>Additional classification schemes (CS) for assets (useful for regulatory tracking).</td>
+</tr>
+<tr>
+<td><code>meta_types.py</code></td>
+<td>Defines custom metadata types (e.g. aspect ratio, language tracks) for assets.</td>
+</tr>
+<tr>
+<td><code>views.py</code></td>
+<td>Configures custom views and search filters in the asset browser.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -768,6 +1072,12 @@ This command will copy the settings template to the database and apply it to the
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -777,7 +1087,7 @@ This command will copy the settings template to the database and apply it to the
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2013 - 2025 imm studios, z.s.
+      Copyright &copy; 2013 - 2026 imm studios, z.s.
     </div>
   
   
@@ -842,7 +1152,7 @@ This command will copy the settings template to the database and apply it to the
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

@@ -23,11 +23,14 @@
     
     
       
-        <title>Nebula interface - Nebula Broadcast</title>
+        <title>User Interface - Nebula Broadcast</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,7 +60,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -66,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nebula-interface" class="md-skip">
+        <a href="#user-interface-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -78,9 +88,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -102,12 +110,38 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nebula interface
+              User Interface
             
           </span>
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -164,6 +198,116 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../concepts/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/docker/" class="md-tabs__link">
+          
+  
+  
+  Deployment & Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../setup/configuring_nebula/" class="md-tabs__link">
+          
+  
+  
+  Configuration Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../usage/linear-broadcasting/" class="md-tabs__link">
+          
+  
+  
+  User & Operations Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -177,8 +321,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -205,7 +351,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Welcome
   
 
     
@@ -230,22 +376,30 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Basics
+    Getting Started
   
 
     
@@ -261,7 +415,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Basics
+    Getting Started
   
 
           </label>
@@ -281,7 +435,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula Concepts
+    Core Concepts
   
 
     
@@ -318,7 +472,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula interface
+    User Interface
   
 
     
@@ -336,7 +490,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula interface
+    User Interface
   
 
     
@@ -362,10 +516,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browser" class="md-nav__link">
+  <a href="#1-asset-browser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Browser
+        1. Asset Browser
       
     </span>
   </a>
@@ -373,10 +527,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#asset-detail" class="md-nav__link">
+  <a href="#2-asset-detail-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Asset detail
+        2. Asset Detail Panel
       
     </span>
   </a>
@@ -384,10 +538,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jobs" class="md-nav__link">
+  <a href="#3-jobs-monitor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Jobs
+        3. Jobs Monitor
       
     </span>
   </a>
@@ -395,10 +549,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scheduler" class="md-nav__link">
+  <a href="#4-scheduler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scheduler
+        4. Scheduler
       
     </span>
   </a>
@@ -406,10 +560,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rundown" class="md-nav__link">
+  <a href="#5-daily-rundown" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rundown
+        5. Daily Rundown
       
     </span>
   </a>
@@ -442,6 +596,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -457,7 +616,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    Deployment & Installation
   
 
     
@@ -473,7 +632,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Installation
+    Deployment & Installation
   
 
           </label>
@@ -493,7 +652,7 @@
   <span class="md-ellipsis">
     
   
-    Docker based installation
+    Docker Setup
   
 
     
@@ -524,6 +683,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -539,7 +703,7 @@
   <span class="md-ellipsis">
     
   
-    Setup
+    Configuration Guide
   
 
     
@@ -555,39 +719,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Setup
+    Configuration Guide
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../setup/casparcg/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CasparCG playout
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -603,7 +739,7 @@
   <span class="md-ellipsis">
     
   
-    Configuring Nebula
+    Settings System
   
 
     
@@ -631,7 +767,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula storages
+    Storage Configuration
   
 
     
@@ -659,7 +795,35 @@
   <span class="md-ellipsis">
     
   
-    Watch folders
+    Watch Folders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/casparcg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CasparCG Playout
   
 
     
@@ -690,6 +854,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -705,7 +874,7 @@
   <span class="md-ellipsis">
     
   
-    Usage
+    User & Operations Guide
   
 
     
@@ -721,7 +890,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Usage
+    User & Operations Guide
   
 
           </label>
@@ -741,7 +910,7 @@
   <span class="md-ellipsis">
     
   
-    Linear broadcasting
+    Linear Playout Scheduling
   
 
     
@@ -769,7 +938,7 @@
   <span class="md-ellipsis">
     
   
-    Video preview
+    Video Preview & Trimming
   
 
     
@@ -817,10 +986,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browser" class="md-nav__link">
+  <a href="#1-asset-browser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Browser
+        1. Asset Browser
       
     </span>
   </a>
@@ -828,10 +997,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#asset-detail" class="md-nav__link">
+  <a href="#2-asset-detail-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Asset detail
+        2. Asset Detail Panel
       
     </span>
   </a>
@@ -839,10 +1008,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jobs" class="md-nav__link">
+  <a href="#3-jobs-monitor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Jobs
+        3. Jobs Monitor
       
     </span>
   </a>
@@ -850,10 +1019,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scheduler" class="md-nav__link">
+  <a href="#4-scheduler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scheduler
+        4. Scheduler
       
     </span>
   </a>
@@ -861,10 +1030,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rundown" class="md-nav__link">
+  <a href="#5-daily-rundown" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rundown
+        5. Daily Rundown
       
     </span>
   </a>
@@ -888,31 +1057,44 @@
 
 
 
-<h1 id="nebula-interface">Nebula interface</h1>
-<h3 id="browser">Browser</h3>
-<p>An Asset browser is a catalog, which provides (based on the user rights) access to all assets within the system.</p>
-<p>Clicking an asset in the browser opens it in the detail tab, 
-while right-click brings a context menu with options to trash/un-trash,
- archive/unarchive the asset(s), force technical metadata refresh and to create a new job (send to).</p>
-<p>Browser module also allows supported assets (e.g. assets with associated media files)
-to be dragged and dropped outside the Application - for example to an NLE, image editor or a local folder.</p>
-<h3 id="asset-detail">Asset detail</h3>
-<p>Provides viewer/editor of metadata associated with the asset, as well as a low-res video player.</p>
-<p>Metadata editor allows users to enter modify or view
-a collection of related metadata of the selected asset.</p>
-<p>Fields available in the editor are based on the folder the asset belongs to. 
-When the folder is changed using the select widget on the top of the editor, form changes accordingly.</p>
-<p>When a new "blank" asset is created using <em>New asset</em> menu option, its status is offline until the media file 
-is associated with the database entry (for example using a filename matching asset's ID). </p>
-<p>When offline, asset duration can be changed manually to the expected value and the asset can be scheduled for playback. 
-Once it's turned online, Nebula updates the duration to match the actual value.</p>
-<h3 id="jobs">Jobs</h3>
-<p>Lists jobs including progress and status and allows their aborting and restarting.</p>
-<h3 id="scheduler">Scheduler</h3>
-<p>Plan and schedule events in EPG/Calendar style.</p>
-<h3 id="rundown">Rundown</h3>
-<p>This module displays all  events and items of a linear playout channel for a chosen day
-Jand provides an interface for item scheduling) and to control the playout server.</p>
+<h1 id="user-interface-overview">User Interface Overview</h1>
+<p>The Nebula client interface provides access to the media catalog, metadata editor, background tasks monitor, and rundown scheduler.</p>
+<hr />
+<h2 id="1-asset-browser">1. Asset Browser</h2>
+<p>The <strong>Asset Browser</strong> is the primary catalog explorer for searching and organizing your media collection.</p>
+<ul>
+<li><strong>Asset Browser List:</strong> Displays assets matching the selected view. Double-clicking an asset opens it in the <strong>Asset Detail</strong> panel.</li>
+<li><strong>Context Menu:</strong> Right-clicking assets allows operators to:<ul>
+<li>Archive or restore assets.</li>
+<li>Move assets to the trash or recover them.</li>
+<li>Trigger technical metadata extraction (re-analyze files).</li>
+<li>Manually dispatch assets to background workflows (e.g., "Send to Playout").</li>
+</ul>
+</li>
+<li><strong>Drag-and-Drop Ingest/Export:</strong> If supported by the OS and client container, you can drag media assets directly from the Browser into external applications (such as DaVinci Resolve, Adobe Premiere Pro, or local file system folders).</li>
+</ul>
+<hr />
+<h2 id="2-asset-detail-panel">2. Asset Detail Panel</h2>
+<p>The <strong>Asset Detail</strong> panel acts as the main metadata editor and proxy media player.</p>
+<ul>
+<li><strong>Metadata Fields:</strong> Allows users to view and edit metadata tags. The form updates dynamically based on the asset's assigned <strong>Folder</strong> (e.g., episode metadata fields differ from music video fields).</li>
+<li><strong>Offline Status:</strong> When a new asset record is created without a file (a "placeholder"), its status is set to <em>Offline</em>. You can manually assign an estimated duration to schedule it. Once the physical file is matched (e.g., via watchfolders or FTP naming conventions), the status changes to <em>Online</em> and Nebula updates the database record with the exact technical duration.</li>
+</ul>
+<hr />
+<h2 id="3-jobs-monitor">3. Jobs Monitor</h2>
+<p>The <strong>Jobs</strong> module provides real-time monitoring of all active background operations:
+* Displays progress percentages and operational states (Queued, Running, Completed, Failed).
+* Allows administrators to abort active jobs or restart failed actions.</p>
+<hr />
+<h2 id="4-scheduler">4. Scheduler</h2>
+<p>The <strong>Scheduler</strong> displays a calendar-style week overview for planning linear broadcast channels:
+* <strong>Event Creation:</strong> Drag assets from the Browser directly into the calendar grid to schedule new programming blocks.
+* <strong>Empty Blocks:</strong> Drag the <strong>Calendar +</strong> icon from the toolbar to create an empty scheduling block for manual metadata entry.
+* <strong>End-Time Flexibility:</strong> Events do not have locked end-times. They can be moved, resized, or adjusted directly from their context menus.
+* <strong>Open Rundown:</strong> Double-clicking an event (or selecting <em>Open Rundown</em> from the menu) switches the view to the granular, item-by-item Daily Rundown.</p>
+<hr />
+<h2 id="5-daily-rundown">5. Daily Rundown</h2>
+<p>The <strong>Rundown</strong> module manages the daily playlist for linear playout channels. It allows operators to arrange assets, configure playout modes, and directly control live video servers.</p>
 
 
 
@@ -933,6 +1115,12 @@ Jand provides an interface for item scheduling) and to control the playout serve
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -942,7 +1130,7 @@ Jand provides an interface for item scheduling) and to control the playout serve
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2013 - 2025 imm studios, z.s.
+      Copyright &copy; 2013 - 2026 imm studios, z.s.
     </div>
   
   
@@ -1007,7 +1195,7 @@ Jand provides an interface for item scheduling) and to control the playout serve
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

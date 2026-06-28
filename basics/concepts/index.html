@@ -23,11 +23,14 @@
     
     
       
-        <title>Nebula Concepts - Nebula Broadcast</title>
+        <title>Core Concepts - Nebula Broadcast</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,7 +60,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -66,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nebula-concepts" class="md-skip">
+        <a href="#core-concepts" class="md-skip">
           Skip to content
         </a>
       
@@ -78,9 +88,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -102,12 +110,38 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nebula Concepts
+              Core Concepts
             
           </span>
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -164,6 +198,116 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/docker/" class="md-tabs__link">
+          
+  
+  
+  Deployment & Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../setup/configuring_nebula/" class="md-tabs__link">
+          
+  
+  
+  Configuration Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../usage/linear-broadcasting/" class="md-tabs__link">
+          
+  
+  
+  User & Operations Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -177,8 +321,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -205,7 +351,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Welcome
   
 
     
@@ -230,22 +376,30 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Basics
+    Getting Started
   
 
     
@@ -261,7 +415,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Basics
+    Getting Started
   
 
           </label>
@@ -290,7 +444,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula Concepts
+    Core Concepts
   
 
     
@@ -308,7 +462,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula Concepts
+    Core Concepts
   
 
     
@@ -334,15 +488,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        System Architecture
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Architecture">
+    <nav class="md-nav" aria-label="System Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -387,12 +541,12 @@
   <a href="#asset-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Asset management
+        Asset Management
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Asset management">
+    <nav class="md-nav" aria-label="Asset Management">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -421,7 +575,7 @@
   <a href="#content-type" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Content type
+        Content Type
       
     </span>
   </a>
@@ -432,7 +586,7 @@
   <a href="#media-type" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Media type
+        Media Type
       
     </span>
   </a>
@@ -451,10 +605,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#actions-and-jobs" class="md-nav__link">
+  <a href="#actions-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Actions and jobs
+        Actions &amp; Jobs
       
     </span>
   </a>
@@ -490,10 +644,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#event-sometimes-referred-as-block" class="md-nav__link">
+  <a href="#event" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Event (sometimes referred as "block")
+        Event
       
     </span>
   </a>
@@ -523,10 +677,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#as-run" class="md-nav__link">
+  <a href="#as-run-log" class="md-nav__link">
     <span class="md-ellipsis">
       
-        As-Run
+        As-Run Log
       
     </span>
   </a>
@@ -561,7 +715,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula interface
+    User Interface
   
 
     
@@ -592,6 +746,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -607,7 +766,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    Deployment & Installation
   
 
     
@@ -623,7 +782,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Installation
+    Deployment & Installation
   
 
           </label>
@@ -643,7 +802,7 @@
   <span class="md-ellipsis">
     
   
-    Docker based installation
+    Docker Setup
   
 
     
@@ -674,6 +833,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -689,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    Setup
+    Configuration Guide
   
 
     
@@ -705,39 +869,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Setup
+    Configuration Guide
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../setup/casparcg/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CasparCG playout
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -753,7 +889,7 @@
   <span class="md-ellipsis">
     
   
-    Configuring Nebula
+    Settings System
   
 
     
@@ -781,7 +917,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula storages
+    Storage Configuration
   
 
     
@@ -809,7 +945,35 @@
   <span class="md-ellipsis">
     
   
-    Watch folders
+    Watch Folders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/casparcg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CasparCG Playout
   
 
     
@@ -840,6 +1004,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -855,7 +1024,7 @@
   <span class="md-ellipsis">
     
   
-    Usage
+    User & Operations Guide
   
 
     
@@ -871,7 +1040,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Usage
+    User & Operations Guide
   
 
           </label>
@@ -891,7 +1060,7 @@
   <span class="md-ellipsis">
     
   
-    Linear broadcasting
+    Linear Playout Scheduling
   
 
     
@@ -919,7 +1088,7 @@
   <span class="md-ellipsis">
     
   
-    Video preview
+    Video Preview & Trimming
   
 
     
@@ -967,15 +1136,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        System Architecture
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Architecture">
+    <nav class="md-nav" aria-label="System Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1020,12 +1189,12 @@
   <a href="#asset-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Asset management
+        Asset Management
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Asset management">
+    <nav class="md-nav" aria-label="Asset Management">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1054,7 +1223,7 @@
   <a href="#content-type" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Content type
+        Content Type
       
     </span>
   </a>
@@ -1065,7 +1234,7 @@
   <a href="#media-type" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Media type
+        Media Type
       
     </span>
   </a>
@@ -1084,10 +1253,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#actions-and-jobs" class="md-nav__link">
+  <a href="#actions-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Actions and jobs
+        Actions &amp; Jobs
       
     </span>
   </a>
@@ -1123,10 +1292,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#event-sometimes-referred-as-block" class="md-nav__link">
+  <a href="#event" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Event (sometimes referred as "block")
+        Event
       
     </span>
   </a>
@@ -1156,10 +1325,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#as-run" class="md-nav__link">
+  <a href="#as-run-log" class="md-nav__link">
     <span class="md-ellipsis">
       
-        As-Run
+        As-Run Log
       
     </span>
   </a>
@@ -1188,90 +1357,86 @@
 
 
 
-<h1 id="nebula-concepts">Nebula Concepts</h1>
-<h2 id="architecture">Architecture</h2>
+<h1 id="core-concepts">Core Concepts</h1>
+<p>Understanding the core objects and architectural components of Nebula is key to designing efficient workflows and system integrations.</p>
+<hr />
+<h2 id="system-architecture">System Architecture</h2>
 <h3 id="site">Site</h3>
-<p>A Nebula instance. A site may be a broadcaster or broadcast network with one or more channels sharing the configuration,
-subset of assets, or users. Each site has its own database, configuration template, and users.</p>
-<p>One site can be run on multiple servers to spread the load.</p>
-<p>The heart of each site is a PostgreSQL, Redis and a shared storage (or multiple storages).
-Nebula server and workers all access these resources.</p>
+<p>A <strong>Site</strong> represents a single Nebula installation. A site can represent a broadcaster or a broadcast network with one or more channels sharing settings, users, and asset catalogs.
+* Each site has its own standalone database schema, configuration templates, and user access levels.
+* To distribute heavy workloads, a single site can run across multiple physical or virtual servers.
+* The backend foundation of a site consists of a <strong>PostgreSQL</strong> database, a <strong>Redis</strong> queue, and one or more <strong>shared storages</strong>.</p>
 <h3 id="server">Server</h3>
-<p>Nebula server provides API and the web interface for Nebula. Server needs to have access to Postgres and Redis, as well as the storage,
-that is used to store low-res media and uploads.</p>
+<p>The <strong>Nebula Server</strong> provides the core Web API and serves the client-side user interface. 
+* The server must have direct network access to the PostgreSQL database, the Redis message broker, and the low-res media storage used for proxy files and user uploads.</p>
 <h3 id="worker">Worker</h3>
-<p>Nebula worker is a program that starts Nebula services, which are small programs designed to perform specific tasks.</p>
-<p>Some services extract metadata from media files, others transcode assets to different formats, control playout servers, and more.
-These services can be distributed across multiple machines within the network and managed through the Nebula web interface.
-Nebula is highly scalable, allowing each site to use workers to distribute media processing tasks across the network.</p>
-<p>Additionally, it is possible to develop custom, site-specific services for very specialized tasks.</p>
-<h2 id="asset-management">Asset management</h2>
+<p>A <strong>Worker</strong> is a background manager daemon that spawns and controls Nebula <strong>Services</strong> (small, task-specific programs).
+* Services perform automated tasks such as technical metadata extraction, transcoding, watchfolder monitoring, and playout engine control.
+* Workers are highly scalable and can be distributed across different machines on your network, allowing media processing tasks (like rendering and transcoding) to scale out horizontally.
+* You can also develop custom, site-specific services to integrate specialized broadcast hardware or proprietary APIs.</p>
+<hr />
+<h2 id="asset-management">Asset Management</h2>
 <h3 id="asset">Asset</h3>
-<p>An asset is a database entry that can receive an unlimited amount of characteristics, such as associated media files, metadata, etc.</p>
+<p>An <strong>Asset</strong> is the primary database record in Nebula. It represents a single logical unit of media or metadata and can hold an unlimited number of metadata attributes, technical details, and associated physical media files.</p>
 <h3 id="folder">Folder</h3>
-<p>Assets, that share the same default characteristics are of the same <em>folder</em>, such as movie, episode, song, story, jingle, etc.</p>
-<p>Folder selection also determines, which metadata keys are displayed in the asset editor.</p>
-<p>By default, nebula comes with the following folders:</p>
+<p>Assets sharing identical default properties and metadata fields belong to the same <strong>Folder</strong>. Examples include:</p>
 <ul>
-<li><strong>Movie</strong> - A feature-length film, or stand-alone production, that is not part of a series.</li>
-<li><strong>Episode</strong> - A single episode of a series.</li>
-<li><strong>Story</strong> - A short-form production, such as a news story. Multiple stories can be used within a single show or program.</li>
-<li><strong>Song</strong> - A single song or music video.</li>
-<li><strong>Fill</strong> - A short-form production used to fill gaps in a schedule, such as a promo.</li>
-<li><strong>Trailer</strong> - A short-form production used to promote a movie, show, or program.</li>
-<li><strong>Jingle</strong> - A short graphic or audio production used to promote a show, program, or channel.</li>
-<li><strong>Commercial</strong> - A single advertisement or commercial. </li>
-<li><strong>Teleshopping</strong> - Long-form advertisement or infomercial, typically 15 minutes or longer.</li>
-<li><strong>Dataset</strong> - A collection of data, such as a CSV or XML file, that can be used for various purposes, such as data analysis or reporting.</li>
-<li><strong>Incoming</strong> - A temporary folder for assets that are being uploaded or imported into the system.</li>
-<li><strong>Serie</strong> - A collection of episodes that are part of a larger production, such as a TV series or web series.</li>
+<li><strong>Movie:</strong> A feature-length, standalone film.</li>
+<li><strong>Episode:</strong> An individual episode belonging to a larger series.</li>
+<li><strong>Story:</strong> A short-form news item or package.</li>
+<li><strong>Song:</strong> A single music track or music video.</li>
+<li><strong>Fill:</strong> Short-form interstitial media (e.g., promotional clips) used to bridge programming gaps.</li>
+<li><strong>Trailer:</strong> A promotional teaser for movies or shows.</li>
+<li><strong>Jingle:</strong> A brief channel identifier or audio watermark.</li>
+<li><strong>Commercial / Teleshopping:</strong> Paid advertisements (short-form or infomercial formats).</li>
+<li><strong>Dataset:</strong> A container for non-video files (such as XML schedule imports, CSV logs).</li>
+<li><strong>Incoming:</strong> The default temporary landing folder for newly detected, unclassified assets.</li>
+<li><strong>Serie:</strong> A parent virtual asset grouping multiple child episodes together.</li>
 </ul>
-<p>These folders can be customized or extended to fit the specific needs of a site, but certain integrations and plugins may rely on the default folders.</p>
-<h3 id="content-type">Content type</h3>
-<p>Content-type is an asset attribute defining what type of content asset represents. Following content types are available:</p>
+<div class="admonition tip">
+<p class="admonition-title">Custom Folders</p>
+<p>Although Nebula permits customization of folders, some default plugins and external automation integrations expect the default folders list to remain present.</p>
+</div>
+<h3 id="content-type">Content Type</h3>
+<p>The physical nature of an asset's data is defined by its <strong>Content Type</strong>:</p>
 <ul>
-<li>AUDIO</li>
-<li>VIDEO</li>
-<li>IMAGE</li>
-<li>TEXT</li>
-<li>DATABROADCASTING</li>
-<li>INTERSTITIAL</li>
-<li>EDUCATION</li>
-<li>APPLICATION</li>
-<li>GAME</li>
-<li>PACKAGE</li>
+<li><code>AUDIO</code> </li>
+<li><code>VIDEO</code> </li>
+<li><code>IMAGE</code> </li>
+<li><code>TEXT</code></li>
+<li><code>DATABROADCASTING</code> </li>
+<li><code>INTERSTITIAL</code></li>
+<li><code>EDUCATION</code> </li>
+<li><code>APPLICATION</code> </li>
+<li><code>GAME</code> </li>
+<li><code>PACKAGE</code></li>
 </ul>
-<h3 id="media-type">Media type</h3>
-<p>Assets may not be necessarily linked to media files. Special assets such as series, have media type virtual. 
-These assets are just database records with metadata attached. Following media types are available:</p>
+<h3 id="media-type">Media Type</h3>
+<p>An asset doesn't need to link to a physical media file. This is determined by its <strong>Media Type</strong>:</p>
 <ul>
-<li>VIRTUAL</li>
-<li>FILE</li>
-<li>URI</li>
+<li><strong>FILE:</strong> Represents a physical file on one of the registered storages.</li>
+<li><strong>URI:</strong> Points to an external stream or network URL.</li>
+<li><strong>VIRTUAL:</strong> Contains no physical media files; it acts purely as a metadata container (e.g. series metadata).</li>
 </ul>
 <h3 id="view">View</h3>
-<p>Views serve as the main filter of assets in the browser. Each view can be configured to contain assets from specific folders, with the given status and matching certain conditions. Additionally, each view have a default set of metadata displayed as columns in the browser table.</p>
-<p>Within the view, you can sort assets by the displayed columns and filter further using full-text search or advanced search queries.</p>
-<h3 id="actions-and-jobs">Actions and jobs</h3>
-<p>Action is a predefined process such as transcoding an asset to a different format or transfer to remote storage. Each action has certain conditions, which an asset must match to start the action automatically or to allow manual triggering. When triggered, a job is created. A job is therefore defined by an asset, an action, and custom settings.</p>
-<p>You can monitor the status of a job and its and progress both in Firefly and the web interface.</p>
+<p><strong>Views</strong> are customized asset filters used in the Nebula Browser. Each view configures which folders, asset statuses, and metadata columns (such as duration, date, or author) are displayed. Within a view, you can execute full-text searches and advanced queries.</p>
+<h3 id="actions-jobs">Actions &amp; Jobs</h3>
+<ul>
+<li><strong>Action:</strong> A predefined, reusable process (e.g., "Transcode to MXF for Playout", "Archive to LTO Tape"). Actions define the conditions under which an asset can be processed.</li>
+<li><strong>Job:</strong> A specific execution of an action applied to an asset. Jobs can be triggered automatically (e.g., on watchfolder ingest) or manually.</li>
+</ul>
+<hr />
 <h2 id="linear-broadcasting">Linear Broadcasting</h2>
 <h3 id="channel">Channel</h3>
-<p>Typically a playout channel. Each site can have several channels. 
-In some cases such as a VOD application, Nebula may be configured without any channels.</p>
-<h3 id="event-sometimes-referred-as-block">Event (sometimes referred as "block")</h3>
-<p>A calendar entry. In the case of linear playout scheduling, an event is an "EPG" program block. 
-An event belongs to a channel and has its start time and other metadata such as title and description.</p>
-<p>Users can view and edit events using the scheduler view in the Firefly application.</p>
+<p>A <strong>Channel</strong> represents a linear playout output. A single Nebula site can manage multiple playout channels concurrently. For installations dedicated solely to Video-on-Demand (VOD) or media archiving, Nebula can run without any channels.</p>
+<h3 id="event">Event</h3>
+<p>A calendar entry corresponding to an EPG block. An <strong>Event</strong> belongs to a channel and has a fixed start time and descriptive metadata (Title, Description, Category).</p>
 <h3 id="item">Item</h3>
-<p>Generally, an item is an instance of an asset scheduled in an event playlist. 
-Several special types of items (without relation to any asset) may be inserted to a playlist as well, such as live events, placeholders, etc.</p>
+<p>An <strong>Item</strong> is an instance of an asset scheduled inside an Event rundown playlist. You can also insert special items that do not reference assets, such as live inputs, graphic overlays, or timing placeholders.</p>
 <h3 id="rundown">Rundown</h3>
-<p>List of all events and items for one day. Rundown view shows all items scheduled for a channel on a given day. 
-It is used to create and edit the schedule, as well as to monitor the playout.</p>
-<h3 id="as-run">As-Run</h3>
-<p>An as-run log is the actual and accurate list of items which have been played out. 
-Nebula provides a mechanism to filter and export the log to various formats for clients, collective rights management organizations, etc.</p>
+<p>A chronological list of all events and playlist items scheduled for a channel on a specific calendar day. The <strong>Rundown</strong> is the primary view used by broadcast operators to control and monitor the active playout.</p>
+<h3 id="as-run-log">As-Run Log</h3>
+<p>An automatic audit trail documenting the exact times that items were played. Nebula compiles this log for compliance reports, copyright auditing, and commercial billing exports.</p>
 
 
 
@@ -1292,6 +1457,12 @@ Nebula provides a mechanism to filter and export the log to various formats for 
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1301,7 +1472,7 @@ Nebula provides a mechanism to filter and export the log to various formats for 
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2013 - 2025 imm studios, z.s.
+      Copyright &copy; 2013 - 2026 imm studios, z.s.
     </div>
   
   
@@ -1366,7 +1537,7 @@ Nebula provides a mechanism to filter and export the log to various formats for 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

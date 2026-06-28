@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../installation/docker/">
+        <link rel="prev" href="../watchfolders/">
       
       
-        <link rel="next" href="../configuring_nebula/">
+        <link rel="next" href="../../usage/linear-broadcasting/">
       
       
         
@@ -23,11 +23,14 @@
     
     
       
-        <title>CasparCG playout - Nebula Broadcast</title>
+        <title>CasparCG Playout - Nebula Broadcast</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,7 +60,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -78,9 +88,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -102,12 +110,38 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CasparCG playout
+              CasparCG Playout
             
           </span>
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -164,6 +198,116 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../basics/concepts/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/docker/" class="md-tabs__link">
+          
+  
+  
+  Deployment & Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../configuring_nebula/" class="md-tabs__link">
+          
+  
+  
+  Configuration Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../usage/linear-broadcasting/" class="md-tabs__link">
+          
+  
+  
+  User & Operations Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -177,8 +321,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
@@ -205,7 +351,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Welcome
   
 
     
@@ -228,6 +374,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -243,7 +394,7 @@
   <span class="md-ellipsis">
     
   
-    Basics
+    Getting Started
   
 
     
@@ -259,7 +410,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Basics
+    Getting Started
   
 
           </label>
@@ -279,7 +430,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula Concepts
+    Core Concepts
   
 
     
@@ -307,7 +458,7 @@
   <span class="md-ellipsis">
     
   
-    Nebula interface
+    User Interface
   
 
     
@@ -338,6 +489,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -353,7 +509,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    Deployment & Installation
   
 
     
@@ -369,7 +525,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Installation
+    Deployment & Installation
   
 
           </label>
@@ -389,7 +545,7 @@
   <span class="md-ellipsis">
     
   
-    Docker based installation
+    Docker Setup
   
 
     
@@ -422,22 +578,30 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Setup
+    Configuration Guide
   
 
     
@@ -453,11 +617,95 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Setup
+    Configuration Guide
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuring_nebula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../watchfolders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch Folders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -482,7 +730,7 @@
   <span class="md-ellipsis">
     
   
-    CasparCG playout
+    CasparCG Playout
   
 
     
@@ -500,7 +748,7 @@
   <span class="md-ellipsis">
     
   
-    CasparCG playout
+    CasparCG Playout
   
 
     
@@ -545,13 +793,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Controlling CasparCG from Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configure-the-playout-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Configure the Playout Channel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-the-playout-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configure the Playout Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-expose-ports-in-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Expose Ports in Docker Compose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-enable-osc-in-casparcgconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Enable OSC in casparcg.config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#media" class="md-nav__link">
+  <a href="#media-directory-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Media
+        Media Directory Setup
       
     </span>
   </a>
@@ -559,10 +857,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#send-to-playout" class="md-nav__link">
+  <a href="#send-to-playout-ingestion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Send to playout
+        Send-to-Playout Ingestion
       
     </span>
   </a>
@@ -570,10 +868,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#psm-service" class="md-nav__link">
+  <a href="#playout-storage-monitor-psm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PSM Service
+        Playout Storage Monitor (PSM)
       
     </span>
   </a>
@@ -584,7 +882,7 @@
   <a href="#live-sources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Live sources
+        Live Sources
       
     </span>
   </a>
@@ -595,90 +893,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../configuring_nebula/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuring Nebula
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../storages/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Nebula storages
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../watchfolders/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Watch folders
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -701,6 +915,11 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -716,7 +935,7 @@
   <span class="md-ellipsis">
     
   
-    Usage
+    User & Operations Guide
   
 
     
@@ -732,7 +951,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Usage
+    User & Operations Guide
   
 
           </label>
@@ -752,7 +971,7 @@
   <span class="md-ellipsis">
     
   
-    Linear broadcasting
+    Linear Playout Scheduling
   
 
     
@@ -780,7 +999,7 @@
   <span class="md-ellipsis">
     
   
-    Video preview
+    Video Preview & Trimming
   
 
     
@@ -847,13 +1066,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Controlling CasparCG from Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configure-the-playout-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Configure the Playout Channel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-the-playout-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configure the Playout Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-expose-ports-in-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Expose Ports in Docker Compose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-enable-osc-in-casparcgconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Enable OSC in casparcg.config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#media" class="md-nav__link">
+  <a href="#media-directory-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Media
+        Media Directory Setup
       
     </span>
   </a>
@@ -861,10 +1130,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#send-to-playout" class="md-nav__link">
+  <a href="#send-to-playout-ingestion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Send to playout
+        Send-to-Playout Ingestion
       
     </span>
   </a>
@@ -872,10 +1141,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#psm-service" class="md-nav__link">
+  <a href="#playout-storage-monitor-psm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PSM Service
+        Playout Storage Monitor (PSM)
       
     </span>
   </a>
@@ -886,7 +1155,7 @@
   <a href="#live-sources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Live sources
+        Live Sources
       
     </span>
   </a>
@@ -910,28 +1179,26 @@
 
 
 
-<h1 id="casparcg-playout">CasparCG playout</h1>
-<p>CasparCG Server is a professional-grade, open-source software available for both Windows and Linux, 
-dedicated to playing out graphics, audio, and video to multiple outputs.</p>
-<p>Its long-standing track record, having been in 24/7 broadcast production since 2006, 
-attests to its stability and reliability in mission-critical environments.</p>
-<p>Nebula leverages this inherent robustness for its on-air operations, 
-ensuring that the playout layer is as dependable as the automation system itself. </p>
-<p>Furthermore, Nebula’s playout control service is designed with a plug-in interface, 
-enabling the execution of secondary events such as character generation (CG), 
-router control, studio control, and recorder control.</p>
+<h1 id="casparcg-playout">CasparCG Playout</h1>
+<p><a href="https://casparcg.com/">CasparCG Server</a> is a professional-grade, open-source software available for both Windows and Linux, dedicated to playing out graphics, audio, and video to multiple outputs.</p>
+<p>Nebula leverages CasparCG's stability and speed for real-time, on-air playout. Additionally, Nebula's playout control service supports custom plug-ins for secondary events (e.g., character generation, routers, studio switchers, recorders).</p>
+<hr />
 <h2 id="prerequisites">Prerequisites</h2>
+<p>Before configuring CasparCG playout, ensure:
+1. <strong>CasparCG Server</strong> (v2.2 or later) is installed and running on a local machine or server.
+2. A fast media drive is allocated for playout assets.
+3. Network connectivity is open between the Nebula worker host and the CasparCG host.</p>
+<hr />
 <h2 id="controlling-casparcg-from-docker">Controlling CasparCG from Docker</h2>
-<p>Should your <code>play</code> service run in Docker and use <code>casparcg</code> engine,
-you need to allow bi-directional communication between the service and the playout server.
-CasparCG uses OSC protocol to provide information about the current state of playback.
-When running in Docker, container has to expose an UDP port Caspar will connect to.</p>
-<p>Let's assume there are two <code>play</code> services running in a container,
-controlling two channels of the same CasparCG server.</p>
-<p>Each channel must be configured with unique <code>controller_port</code> and <code>caspar_osc_port</code> values in the site template:</p>
-<p><em>settings/channels.py</em></p>
+<p>If your Nebula <code>play</code> service runs inside a Docker container, you must configure bi-directional communication between the service and the playout server:
+* <strong>Outbound control:</strong> Nebula commands CasparCG via AMCP protocol (TCP port <code>5250</code> by default).
+* <strong>Inbound feedback:</strong> CasparCG streams state feedback back to the Nebula worker via OSC protocol (UDP ports).</p>
+<p>When running in Docker, you must expose the container UDP ports so CasparCG can connect and stream OSC feedback.</p>
+<h3 id="1-configure-the-playout-channel">1. Configure the Playout Channel</h3>
+<p>In your site channel settings file (<code>settings/channels.py</code>), register a <code>PlayoutChannelSettings</code> entry with a unique <code>controller_port</code> and <code>caspar_osc_port</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nebula.settings.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlayoutChannelSettings</span><span class="p">,</span> <span class="n">AcceptModel</span>
 
+<span class="c1"># Define folder constraints for the calendar/rundowns</span>
 <span class="n">scheduler_accepts</span> <span class="o">=</span> <span class="n">AcceptModel</span><span class="p">(</span><span class="n">folders</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">rundown_accepts</span> <span class="o">=</span> <span class="n">AcceptModel</span><span class="p">(</span><span class="n">folders</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 
@@ -954,63 +1221,52 @@ controlling two channels of the same CasparCG server.</p>
     <span class="n">playout_dir</span><span class="o">=</span><span class="s2">&quot;media&quot;</span><span class="p">,</span>
     <span class="n">playout_container</span><span class="o">=</span><span class="s2">&quot;mxf&quot;</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;caspar_host&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.100&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;caspar_port&quot;</span><span class="p">:</span> <span class="mi">5250</span><span class="p">,</span>
-        <span class="s2">&quot;caspar_osc_port&quot;</span><span class="p">:</span> <span class="mi">6251</span><span class="p">,</span>
+        <span class="s2">&quot;caspar_host&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.100&quot;</span><span class="p">,</span>  <span class="c1"># IP address of your CasparCG server</span>
+        <span class="s2">&quot;caspar_port&quot;</span><span class="p">:</span> <span class="mi">5250</span><span class="p">,</span>              <span class="c1"># Default AMCP port</span>
+        <span class="s2">&quot;caspar_osc_port&quot;</span><span class="p">:</span> <span class="mi">6251</span><span class="p">,</span>          <span class="c1"># Unique OSC feedback UDP port</span>
         <span class="s2">&quot;caspar_channel&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">&quot;caspar_feed_layer&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
         <span class="s2">&quot;live_source&quot;</span><span class="p">:</span> <span class="s2">&quot;DECKLINK 2&quot;</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">)</span>
 
-<span class="c1"># Configure second channel similarly</span>
-
-<span class="n">channel2</span> <span class="o">=</span> <span class="o">...</span>
-
-<span class="n">CHANNELS</span> <span class="o">=</span> <span class="p">[</span><span class="n">channel1</span><span class="p">,</span> <span class="n">channel2</span><span class="p">]</span>
+<span class="n">CHANNELS</span> <span class="o">=</span> <span class="p">[</span><span class="n">channel1</span><span class="p">]</span>
 </code></pre></div>
-<p>Then setup both controllers services to run on the <code>worker</code> host:</p>
-<p><em>settings/services.py</em></p>
-<div class="highlight"><pre><span></span><code><span class="n">PLAY1</span> <span class="o">=</span> <span class="s2">&quot;&lt;settings&gt;&lt;id_channel&gt;1&lt;/id_channel&gt;&lt;/settings&gt;&quot;</span>
-<span class="n">PLAY2</span> <span class="o">=</span> <span class="s2">&quot;&lt;settings&gt;&lt;id_channel&gt;2&lt;/id_channel&gt;&lt;/settings&gt;&quot;</span>
+<h3 id="2-configure-the-playout-service">2. Configure the Playout Service</h3>
+<p>In your <code>settings/services.py</code>, bind the channel ID to a playout service running on a specific worker:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nebula.settings.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ServiceSettings</span>
+
+<span class="n">PLAY1</span> <span class="o">=</span> <span class="s2">&quot;&lt;settings&gt;&lt;id_channel&gt;1&lt;/id_channel&gt;&lt;/settings&gt;&quot;</span>
 
 <span class="n">SERVICES</span> <span class="o">=</span> <span class="p">[</span>
-   <span class="c1"># ...</span>
-   <span class="n">ServiceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;play&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;play1&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;worker&quot;</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">PLAY1</span><span class="p">),</span>  
-   <span class="n">ServiceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;play&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;play2&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;worker&quot;</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">PLAY2</span><span class="p">),</span>
-   <span class="c1"># ...</span>
+   <span class="n">ServiceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;play&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;play1&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;worker&quot;</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">PLAY1</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
-<p>And we create configuration files for both services:</p>
-<p>In the <code>docker-compose.yml</code> we setup UDP port forwarding for both ports
-we specified in the channels configuration to the worker running the play services:</p>
+<h3 id="3-expose-ports-in-docker-compose">3. Expose Ports in Docker Compose</h3>
+<p>In your <code>docker-compose.yml</code>, expose the UDP ports you specified in your channel config for the worker container:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">worker</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;6251:6251/udp&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;6252:6252/udp&quot;</span>
 </code></pre></div>
-<p>And last, in the <code>casparcg.config</code> file, we enable sending OSC messages to the host.</p>
+<h3 id="4-enable-osc-in-casparcgconfig">4. Enable OSC in <code>casparcg.config</code></h3>
+<p>On your CasparCG Server machine, open the <code>casparcg.config</code> configuration file and add the worker IP and OSC port to the predefined clients section:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;osc&gt;</span>
 <span class="w">  </span><span class="nt">&lt;predefined-clients&gt;</span>
 <span class="w">    </span><span class="nt">&lt;predefined-client&gt;</span>
 <span class="w">      </span><span class="nt">&lt;address&gt;</span>IP_ADDRESS_OF_DOCKER_HOST<span class="nt">&lt;/address&gt;</span>
 <span class="w">      </span><span class="nt">&lt;port&gt;</span>6251<span class="nt">&lt;/port&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/predefined-client&gt;</span>
-<span class="w">    </span><span class="nt">&lt;predefined-client&gt;</span>
-<span class="w">      </span><span class="nt">&lt;address&gt;</span>IP_ADDRESS_OF_DOCKER_HOST<span class="nt">&lt;/address&gt;</span>
-<span class="w">      </span><span class="nt">&lt;port&gt;</span>6252<span class="nt">&lt;/port&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/predefined-client&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/predefined-clients&gt;</span>
 <span class="nt">&lt;/osc&gt;</span>
 </code></pre></div>
-<h2 id="media">Media</h2>
-<p>Our best practice is to have <code>media.dir</code> directory
-on the playout server data drive (e.g. <code>d:\media.dir</code> on Windows ), then we share the media drive,
-so it's accessible as for example <code>\\playoutserver\playout</code></p>
-<p>In <code>casparcg.config</code> set the <code>&lt;media-path&gt;</code> to the local path to the directory.</p>
-<h2 id="send-to-playout">Send to playout</h2>
-<p>In order to copy media files to the playout storage, create an action for each physical playout storage.</p>
+<hr />
+<h2 id="media-directory-setup">Media Directory Setup</h2>
+<p>Our recommended layout is to host a <code>media.dir</code> folder on the playout server's high-speed media drive (e.g. <code>D:\media.dir</code> on Windows). Share this folder on the network so it is accessible as a path (like <code>\\playoutserver\playout</code>).</p>
+<p>In the server's <code>casparcg.config</code> file, set the <code>&lt;media-path&gt;</code> to point directly to your local media directory.</p>
+<hr />
+<h2 id="send-to-playout-ingestion">Send-to-Playout Ingestion</h2>
+<p>To copy files automatically or manually from production storage to playout storage, configure a transcode/copy Action inside <code>settings/actions.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;settings&gt;</span>
 <span class="w">    </span><span class="nt">&lt;allow_if&gt;</span>True<span class="nt">&lt;/allow_if&gt;</span>
@@ -1023,16 +1279,18 @@ so it's accessible as for example <code>\\playoutserver\playout</code></p>
 <span class="w">    </span><span class="nt">&lt;/task&gt;</span>
 <span class="nt">&lt;/settings&gt;</span>
 </code></pre></div>
-<h2 id="psm-service">PSM Service</h2>
-<p>PSM (Playout storage monitor) is a Nebula service which controls sending media filest to the playout
-storage automatically based on the schedule. By default it start the job 24 hours before broadcast time.</p>
-<p>Only one PSM instance is needed per installation as it handles all configured playout channels.
-No further configuration of the service is required.</p>
-<h2 id="live-sources">Live sources</h2>
-<p>When "LIVE" item is added to a rundown, the playout controller starts playing the source defined in the channel configuration <code>live_source</code> parameter. 
-This can be a decklink input, NDI source, or any other source supported by CasparCG. </p>
-<p>Live source cannot be changed during runtime - only one live source can be defined per channel. If you need to switch between multiple live sources, 
-you can use a switcher device (e.g., Blackmagic ATEM) for SDI or prepare your source on another CasparCG channel and use a route producer as live source.</p>
+<hr />
+<h2 id="playout-storage-monitor-psm">Playout Storage Monitor (PSM)</h2>
+<p>The <strong>PSM Service</strong> monitors the active playlist schedules and automatically queues transfer/transcode jobs to the playout server. 
+* <strong>Timing:</strong> By default, it schedules files to transfer <strong>24 hours</strong> before their scheduled broadcast time.
+* <strong>Scaling:</strong> Only one PSM instance is needed per site installation. It manages playout queues for all configured channels. No additional parameters are required.</p>
+<hr />
+<h2 id="live-sources">Live Sources</h2>
+<p>When a rundown block is set to <code>LIVE</code>, the playout controller instructs CasparCG to play the source defined under the channel's <code>live_source</code> configuration (e.g. a DeckLink physical input, a network NDI source, or an IP stream).</p>
+<div class="admonition info">
+<p class="admonition-title">Changing Live Feeds</p>
+<p>The <code>live_source</code> parameter is static and cannot be changed dynamically during a live show. If you need to switch between multiple inputs, either use an upstream hardware switcher (such as a Blackmagic ATEM) or route different video sources onto secondary CasparCG channels and command routing at the playout layer.</p>
+</div>
 
 
 
@@ -1053,6 +1311,12 @@ you can use a switcher device (e.g., Blackmagic ATEM) for SDI or prepare your so
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1062,7 +1326,7 @@ you can use a switcher device (e.g., Blackmagic ATEM) for SDI or prepare your so
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2013 - 2025 imm studios, z.s.
+      Copyright &copy; 2013 - 2026 imm studios, z.s.
     </div>
   
   
@@ -1127,7 +1391,7 @@ you can use a switcher device (e.g., Blackmagic ATEM) for SDI or prepare your so
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

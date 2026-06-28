@@ -1,16 +1,26 @@
-/*
-:root > * {
-    --md-default-bg-color: #19161f;
-    --md-footer-bg-color--dark: #24202e;
-    --md-default-bg-color--light: #1f1e26;
-    --md-default-bg-color--lighter: #24202e;
-
-    --md-primary-fg-color: #24202e;
-    --md-primary-fg-color--light: #dddddd;
-    --md-primary-fg-color--dark: #aaaaaa;
-
-    --md-typeset-color: white;
-    --md-typeset-a-color: #0ed3fe;
-    --md-default-fg-color--light: #dddddd;
+/* Custom color palette overrides for a sleek dark broadcast look */
+:root [data-md-color-scheme="slate"] {
+  --md-default-bg-color: #110e16;
+  --md-default-bg-color--light: #1a1622;
+  --md-default-bg-color--lighter: #221d2c;
+  --md-primary-fg-color: #1b1625;
+  --md-primary-fg-color--light: #2c253b;
+  --md-primary-fg-color--dark: #0f0b16;
+  --md-accent-fg-color: #a855f7;
+  --md-typeset-a-color: #0ed3fe;
 }
-*/*/*/*/*/*/*/*/
+
+/* Light mode overrides */
+:root [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #6b21a8;
+  --md-primary-fg-color--light: #a855f7;
+  --md-primary-fg-color--dark: #4c1d95;
+  --md-accent-fg-color: #a855f7;
+  --md-typeset-a-color: #0284c7;
+}
+
+/* Additional UI polish */
+.md-grid {
+  max-width: 78rem;
+}
+
