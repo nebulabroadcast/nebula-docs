@@ -12,22 +12,45 @@ extra:
     - icon: fontawesome/regular/envelope
       link: mailto:info@nebulabroadcast.com
 
-copyright: Copyright &copy; 2013 - 2025 imm studios, z.s.
+copyright: Copyright &copy; 2013 - 2026 imm studios, z.s.
 
 theme:
   name: material
-
-  hide:
-    - footer
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - content.code.copy
+    - content.code.annotate
 
 markdown_extensions:
-  - pymdownx.highlight:
-      use_pygments: true
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
 
 plugins:
   - search
@@ -35,3 +58,20 @@ plugins:
 
 extra_css:
   - stylesheets/main.css
+
+nav:
+  - Welcome: index.md
+  - Getting Started:
+    - Core Concepts: basics/concepts.md
+    - User Interface: basics/interface.md
+  - Deployment & Installation:
+    - Docker Setup: installation/docker.md
+  - Configuration Guide:
+    - Settings System: setup/configuring_nebula.md
+    - Storage Configuration: setup/storages.md
+    - Watch Folders: setup/watchfolders.md
+    - CasparCG Playout: setup/casparcg.md
+  - User & Operations Guide:
+    - Linear Playout Scheduling: usage/linear-broadcasting.md
+    - Video Preview & Trimming: usage/video-preview.md
+

@@ -1,42 +1,50 @@
-# Nebula interface
+# User Interface Overview
 
-### Browser
+The Nebula client interface provides access to the media catalog, metadata editor, background tasks monitor, and rundown scheduler.
 
-An Asset browser is a catalog, which provides (based on the user rights) access to all assets within the system.
+---
 
-Clicking an asset in the browser opens it in the detail tab, 
-while right-click brings a context menu with options to trash/un-trash,
- archive/unarchive the asset(s), force technical metadata refresh and to create a new job (send to).
+## 1. Asset Browser
 
-Browser module also allows supported assets (e.g. assets with associated media files)
-to be dragged and dropped outside the Application - for example to an NLE, image editor or a local folder.
+The **Asset Browser** is the primary catalog explorer for searching and organizing your media collection.
 
-### Asset detail
+* **Asset Browser List:** Displays assets matching the selected view. Double-clicking an asset opens it in the **Asset Detail** panel.
+* **Context Menu:** Right-clicking assets allows operators to:
+    * Archive or restore assets.
+    * Move assets to the trash or recover them.
+    * Trigger technical metadata extraction (re-analyze files).
+    * Manually dispatch assets to background workflows (e.g., "Send to Playout").
+* **Drag-and-Drop Ingest/Export:** If supported by the OS and client container, you can drag media assets directly from the Browser into external applications (such as DaVinci Resolve, Adobe Premiere Pro, or local file system folders).
 
-Provides viewer/editor of metadata associated with the asset, as well as a low-res video player.
+---
 
-Metadata editor allows users to enter modify or view
-a collection of related metadata of the selected asset.
+## 2. Asset Detail Panel
 
-Fields available in the editor are based on the folder the asset belongs to. 
-When the folder is changed using the select widget on the top of the editor, form changes accordingly.
+The **Asset Detail** panel acts as the main metadata editor and proxy media player.
 
-When a new "blank" asset is created using *New asset* menu option, its status is offline until the media file 
-is associated with the database entry (for example using a filename matching asset's ID). 
+* **Metadata Fields:** Allows users to view and edit metadata tags. The form updates dynamically based on the asset's assigned **Folder** (e.g., episode metadata fields differ from music video fields).
+* **Offline Status:** When a new asset record is created without a file (a "placeholder"), its status is set to *Offline*. You can manually assign an estimated duration to schedule it. Once the physical file is matched (e.g., via watchfolders or FTP naming conventions), the status changes to *Online* and Nebula updates the database record with the exact technical duration.
 
-When offline, asset duration can be changed manually to the expected value and the asset can be scheduled for playback. 
-Once it's turned online, Nebula updates the duration to match the actual value.
+---
 
-### Jobs
+## 3. Jobs Monitor
 
-Lists jobs including progress and status and allows their aborting and restarting.
+The **Jobs** module provides real-time monitoring of all active background operations:
+* Displays progress percentages and operational states (Queued, Running, Completed, Failed).
+* Allows administrators to abort active jobs or restart failed actions.
 
-### Scheduler
+---
 
-Plan and schedule events in EPG/Calendar style.
+## 4. Scheduler
 
-### Rundown
+The **Scheduler** displays a calendar-style week overview for planning linear broadcast channels:
+* **Event Creation:** Drag assets from the Browser directly into the calendar grid to schedule new programming blocks.
+* **Empty Blocks:** Drag the **Calendar +** icon from the toolbar to create an empty scheduling block for manual metadata entry.
+* **End-Time Flexibility:** Events do not have locked end-times. They can be moved, resized, or adjusted directly from their context menus.
+* **Open Rundown:** Double-clicking an event (or selecting *Open Rundown* from the menu) switches the view to the granular, item-by-item Daily Rundown.
 
-This module displays all  events and items of a linear playout channel for a chosen day
-Jand provides an interface for item scheduling) and to control the playout server.
+---
 
+## 5. Daily Rundown
+
+The **Rundown** module manages the daily playlist for linear playout channels. It allows operators to arrange assets, configure playout modes, and directly control live video servers.

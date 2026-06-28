@@ -1,20 +1,18 @@
-Watch folders
-=============
+# Watch Folders
 
-Using watch folders is the most convenient way to import media files into Nebula.
+Using watch folders is the most convenient way to automate media file ingestion in Nebula. 
 
-Watch folders allow you to automatically create assets in Nebula when new media files are added to specific directories. 
+Watch folders monitor specific storage directories and automatically create corresponding database assets in Nebula as soon as new files are detected. This eliminates the need for manual asset creation and ensures that your media library is always up-to-date.
 
-This eliminates the need for manual asset creation and ensures that your media library is always up-to-date.
+To enable watch folders, you must configure and run a single instance of the `watch` service in your setup.
 
-To use watch folders, use a single instance of the `watch` service. 
-Service configuration may contain one or more watch folders.
+---
 
-### Minimal configuration
+## Minimal Configuration
 
-The following example shows a minimal configuration for a watch folder service,
-monitoring two directories. For each detected file, an asset will be created in the
-default "Incoming" nebula folder (ID 12).
+In your service settings template (`settings/services.py`), define a watch service configuration with monitored storage paths. 
+
+For each detected file, a database asset will be created in the default **Incoming** folder (usually ID `12`):
 
 ```xml
 <service>
@@ -23,37 +21,40 @@ default "Incoming" nebula folder (ID 12).
 </service>
 ```
 
-### Customizing watch folder behavior
+---
 
-The behavior of each watch folder can be customized using the following attributes within the `<folder>` tag.
+## Customizing Folder Behavior
 
-| Attribute           | Type     | Default | Description                                                                                                                             |
-| ------------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| id_storage          | required | \-      | Nebula storage id.                                                                                                                      |
-| path                | required | \-      | The path to the directory that will be monitored.                                                                                       |
-| id_folder           | optional | 12      | The ID of the Nebula folder where new assets will be created.                                                                           |
-| recursive           | optional | TRUE    | If true, the watch folder will scan subdirectories.                                                                                     |
-| hidden              | optional | FALSE   | If true, files and folders beginning with a . will be ignored.                                                                          |
-| quarantine_time     | optional | 10      | The number of seconds a file must remain unchanged before it is processed. This prevents incomplete file transfers from being imported. |
-| case_sensitive_exts | optional | FALSE   | If true, file extensions will be matched with case sensitivity.                                                                         |
+You can customize how files are scanned, matched, and processed using XML attributes within the `<folder>` tag:
 
+| Attribute | Type | Default | Description |
+| --- | --- | --- | --- |
+| `id_storage` | Required | - | The target storage ID to write metadata or files to. |
+| `path` | Required | - | The subdirectory path within that storage to monitor. |
+| `id_folder` | Optional | `12` | The Nebula folder ID (e.g. Movie, Episode, Song) where new assets will be created. |
+| `recursive` | Optional | `TRUE` | If `TRUE`, scans and watches subdirectories recursively. |
+| `hidden` | Optional | `FALSE` | If `TRUE`, files and folders starting with a dot (`.`) are ignored. |
+| `quarantine_time` | Optional | `10` | Seconds a file must remain unchanged before import starts. Prevents incomplete files from being processed. |
+| `case_sensitive_exts`| Optional | `FALSE`| Enables case-sensitive matching for monitored file extensions. |
 
-### Advanced scripting
+!!! tip "Quarantine Time"
+    Always configure `quarantine_time` (e.g., to `30` or `60` seconds) if media files are uploaded via slow FTP/network channels. This guarantees Nebula won't try to analyze or move a file while it's still being written.
 
-For more advanced workflows, you can execute a Python script to modify the metadata of a newly created asset. 
-This is useful for tasks like loading metadata from a sidecar file or generating a custom asset identifier.
+---
 
-The script is defined within a `<post>` tag inside the `<folder>` tag. 
-The newly created asset is available as the asset variable.
+## Advanced Python Post-Processing
 
-#### Example: Creating a Custom Identifier
+For complex workflows, you can write inline Python scripts inside a `<post>` block to programmatically inspect the file, extract sidecar metadata, or generate custom identifiers.
 
-This example uses the `shortuuid` library to generate a unique, 
-short identifier for the asset's `id/main` metadata field.
+The newly created asset is exposed to the script via the `asset` variable.
+
+### Example: Generating a Custom Identifier
+
+This script runs after a file is matched. It uses the `shortuuid` library to set a unique key in the asset's main identifier:
 
 ```xml
 <service>
-  <folder id_storage="1" path="media.dir" recursive="1" id_folder="1">
+  <folder id_storage="1" path="media.dir" recursive="TRUE" id_folder="1">
     <post>
 <![CDATA[
 import shortuuid
@@ -63,3 +64,6 @@ asset["id/main"] = shortuuid.uuid()
   </folder>
 </service>
 ```
+
+!!! warning "Script Execution Sandbox"
+    Post-processing scripts run with the privileges of the Nebula worker process. Ensure you only execute verified scripts to avoid security risks.

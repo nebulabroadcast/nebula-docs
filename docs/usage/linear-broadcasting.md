@@ -18,7 +18,7 @@ In this case, a dialog window requesting metadata entry pops-up.
 Note that events don't have fixed end-time. You can move events freely using drag-n-drop
 (or by setting the start time in the event detail dialog accessible from the context menu).
 
-Double-click the event to switch to the [rundown](/doc/nebula/rundown.html) view and scroll to the chosen event.
+Double-click the event to switch to the [rundown](#rundown) view and scroll to the chosen event.
 The same can be achieved by selecting *Open rundown* entry from the event pop-up menu.
 
 Rundown

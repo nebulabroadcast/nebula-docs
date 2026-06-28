@@ -1,42 +1,35 @@
-CasparCG playout
-================
+# CasparCG Playout
 
-CasparCG Server is a professional-grade, open-source software available for both Windows and Linux, 
-dedicated to playing out graphics, audio, and video to multiple outputs.
+[CasparCG Server](https://casparcg.com/) is a professional-grade, open-source software available for both Windows and Linux, dedicated to playing out graphics, audio, and video to multiple outputs.
 
-Its long-standing track record, having been in 24/7 broadcast production since 2006, 
-attests to its stability and reliability in mission-critical environments.
+Nebula leverages CasparCG's stability and speed for real-time, on-air playout. Additionally, Nebula's playout control service supports custom plug-ins for secondary events (e.g., character generation, routers, studio switchers, recorders).
 
-Nebula leverages this inherent robustness for its on-air operations, 
-ensuring that the playout layer is as dependable as the automation system itself. 
+---
 
-Furthermore, Nebula’s playout control service is designed with a plug-in interface, 
-enabling the execution of secondary events such as character generation (CG), 
-router control, studio control, and recorder control.
+## Prerequisites
 
-Prerequisites
--------------
+Before configuring CasparCG playout, ensure:
+1. **CasparCG Server** (v2.2 or later) is installed and running on a local machine or server.
+2. A fast media drive is allocated for playout assets.
+3. Network connectivity is open between the Nebula worker host and the CasparCG host.
 
+---
 
-Controlling CasparCG from Docker
---------------------------------
+## Controlling CasparCG from Docker
 
-Should your `play` service run in Docker and use `casparcg` engine,
-you need to allow bi-directional communication between the service and the playout server.
-CasparCG uses OSC protocol to provide information about the current state of playback.
-When running in Docker, container has to expose an UDP port Caspar will connect to.
+If your Nebula `play` service runs inside a Docker container, you must configure bi-directional communication between the service and the playout server:
+* **Outbound control:** Nebula commands CasparCG via AMCP protocol (TCP port `5250` by default).
+* **Inbound feedback:** CasparCG streams state feedback back to the Nebula worker via OSC protocol (UDP ports).
 
-Let's assume there are two `play` services running in a container,
-controlling two channels of the same CasparCG server.
+When running in Docker, you must expose the container UDP ports so CasparCG can connect and stream OSC feedback.
 
-Each channel must be configured with unique `controller_port` and `caspar_osc_port` values in the site template:
-
-*settings/channels.py*
+### 1. Configure the Playout Channel
+In your site channel settings file (`settings/channels.py`), register a `PlayoutChannelSettings` entry with a unique `controller_port` and `caspar_osc_port`:
 
 ```python
-
 from nebula.settings.models import PlayoutChannelSettings, AcceptModel
 
+# Define folder constraints for the calendar/rundowns
 scheduler_accepts = AcceptModel(folders=[1, 2])
 rundown_accepts = AcceptModel(folders=[1, 3, 4, 5, 6, 7, 8, 9, 10])
 
@@ -59,54 +52,43 @@ channel1 = PlayoutChannelSettings(
     playout_dir="media",
     playout_container="mxf",
     config={
-        "caspar_host": "192.168.1.100",
-        "caspar_port": 5250,
-        "caspar_osc_port": 6251,
+        "caspar_host": "192.168.1.100",  # IP address of your CasparCG server
+        "caspar_port": 5250,              # Default AMCP port
+        "caspar_osc_port": 6251,          # Unique OSC feedback UDP port
         "caspar_channel": 1,
         "caspar_feed_layer": 10,
         "live_source": "DECKLINK 2",
     },
 )
 
-# Configure second channel similarly
-
-channel2 = ...
-
-CHANNELS = [channel1, channel2]
+CHANNELS = [channel1]
 ```
 
-Then setup both controllers services to run on the `worker` host:
-
-*settings/services.py*
+### 2. Configure the Playout Service
+In your `settings/services.py`, bind the channel ID to a playout service running on a specific worker:
 
 ```python
+from nebula.settings.models import ServiceSettings
 
 PLAY1 = "<settings><id_channel>1</id_channel></settings>"
-PLAY2 = "<settings><id_channel>2</id_channel></settings>"
 
 SERVICES = [
-   # ...
-   ServiceSettings(id=11, type="play", name="play1", host="worker", settings=PLAY1),  
-   ServiceSettings(id=12, type="play", name="play2", host="worker", settings=PLAY2),
-   # ...
+   ServiceSettings(id=11, type="play", name="play1", host="worker", settings=PLAY1),
 ]
 ```
 
-And we create configuration files for both services:
-
-
-In the `docker-compose.yml` we setup UDP port forwarding for both ports
-we specified in the channels configuration to the worker running the play services:
+### 3. Expose Ports in Docker Compose
+In your `docker-compose.yml`, expose the UDP ports you specified in your channel config for the worker container:
 
 ```yaml
 services:
   worker:
     ports:
       - "6251:6251/udp"
-      - "6252:6252/udp"
 ```
 
-And last, in the `casparcg.config` file, we enable sending OSC messages to the host.
+### 4. Enable OSC in `casparcg.config`
+On your CasparCG Server machine, open the `casparcg.config` configuration file and add the worker IP and OSC port to the predefined clients section:
 
 ```xml
 <osc>
@@ -115,28 +97,23 @@ And last, in the `casparcg.config` file, we enable sending OSC messages to the h
       <address>IP_ADDRESS_OF_DOCKER_HOST</address>
       <port>6251</port>
     </predefined-client>
-    <predefined-client>
-      <address>IP_ADDRESS_OF_DOCKER_HOST</address>
-      <port>6252</port>
-    </predefined-client>
   </predefined-clients>
 </osc>
 ```
 
-Media
------
+---
 
-Our best practice is to have `media.dir` directory
-on the playout server data drive (e.g. `d:\media.dir` on Windows ), then we share the media drive,
-so it's accessible as for example `\\playoutserver\playout`
+## Media Directory Setup
 
-In `casparcg.config` set the `<media-path>` to the local path to the directory.
+Our recommended layout is to host a `media.dir` folder on the playout server's high-speed media drive (e.g. `D:\media.dir` on Windows). Share this folder on the network so it is accessible as a path (like `\\playoutserver\playout`).
 
+In the server's `casparcg.config` file, set the `<media-path>` to point directly to your local media directory.
 
-Send to playout
----------------
+---
 
-In order to copy media files to the playout storage, create an action for each physical playout storage.
+## Send-to-Playout Ingestion
+
+To copy files automatically or manually from production storage to playout storage, configure a transcode/copy Action inside `settings/actions.py`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -152,21 +129,19 @@ In order to copy media files to the playout storage, create an action for each p
 </settings>
 ```
 
-PSM Service
------------
+---
 
-PSM (Playout storage monitor) is a Nebula service which controls sending media filest to the playout
-storage automatically based on the schedule. By default it start the job 24 hours before broadcast time.
+## Playout Storage Monitor (PSM)
 
-Only one PSM instance is needed per installation as it handles all configured playout channels.
-No further configuration of the service is required.
+The **PSM Service** monitors the active playlist schedules and automatically queues transfer/transcode jobs to the playout server. 
+* **Timing:** By default, it schedules files to transfer **24 hours** before their scheduled broadcast time.
+* **Scaling:** Only one PSM instance is needed per site installation. It manages playout queues for all configured channels. No additional parameters are required.
 
+---
 
-Live sources
-------------
+## Live Sources
 
-When "LIVE" item is added to a rundown, the playout controller starts playing the source defined in the channel configuration `live_source` parameter. 
-This can be a decklink input, NDI source, or any other source supported by CasparCG. 
+When a rundown block is set to `LIVE`, the playout controller instructs CasparCG to play the source defined under the channel's `live_source` configuration (e.g. a DeckLink physical input, a network NDI source, or an IP stream).
 
-Live source cannot be changed during runtime - only one live source can be defined per channel. If you need to switch between multiple live sources, 
-you can use a switcher device (e.g., Blackmagic ATEM) for SDI or prepare your source on another CasparCG channel and use a route producer as live source.
+!!! info "Changing Live Feeds"
+    The `live_source` parameter is static and cannot be changed dynamically during a live show. If you need to switch between multiple inputs, either use an upstream hardware switcher (such as a Blackmagic ATEM) or route different video sources onto secondary CasparCG channels and command routing at the playout layer.
