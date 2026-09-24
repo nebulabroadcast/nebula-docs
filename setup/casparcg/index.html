@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1204,7 +1204,7 @@
 
 <span class="n">channel1</span> <span class="o">=</span> <span class="n">PlayoutChannelSettings</span><span class="p">(</span>
     <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Channel 1&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"Channel 1"</span><span class="p">,</span>
     <span class="n">fps</span><span class="o">=</span><span class="mf">25.0</span><span class="p">,</span>
     <span class="n">plugins</span><span class="o">=</span><span class="p">[],</span>
     <span class="n">solvers</span><span class="o">=</span><span class="p">[],</span>
@@ -1213,20 +1213,20 @@
     <span class="n">rundown_accepts</span><span class="o">=</span><span class="n">rundown_accepts</span><span class="p">,</span>
     <span class="n">rundown_columns</span><span class="o">=</span><span class="p">[],</span>
     <span class="n">send_action</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;casparcg&quot;</span><span class="p">,</span>
+    <span class="n">engine</span><span class="o">=</span><span class="s2">"casparcg"</span><span class="p">,</span>
     <span class="n">allow_remote</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">controller_host</span><span class="o">=</span><span class="s2">&quot;worker&quot;</span><span class="p">,</span>
+    <span class="n">controller_host</span><span class="o">=</span><span class="s2">"worker"</span><span class="p">,</span>
     <span class="n">controller_port</span><span class="o">=</span><span class="mi">42101</span><span class="p">,</span>
     <span class="n">playout_storage</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">playout_dir</span><span class="o">=</span><span class="s2">&quot;media&quot;</span><span class="p">,</span>
-    <span class="n">playout_container</span><span class="o">=</span><span class="s2">&quot;mxf&quot;</span><span class="p">,</span>
+    <span class="n">playout_dir</span><span class="o">=</span><span class="s2">"media"</span><span class="p">,</span>
+    <span class="n">playout_container</span><span class="o">=</span><span class="s2">"mxf"</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;caspar_host&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.100&quot;</span><span class="p">,</span>  <span class="c1"># IP address of your CasparCG server</span>
-        <span class="s2">&quot;caspar_port&quot;</span><span class="p">:</span> <span class="mi">5250</span><span class="p">,</span>              <span class="c1"># Default AMCP port</span>
-        <span class="s2">&quot;caspar_osc_port&quot;</span><span class="p">:</span> <span class="mi">6251</span><span class="p">,</span>          <span class="c1"># Unique OSC feedback UDP port</span>
-        <span class="s2">&quot;caspar_channel&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">&quot;caspar_feed_layer&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">&quot;live_source&quot;</span><span class="p">:</span> <span class="s2">&quot;DECKLINK 2&quot;</span><span class="p">,</span>
+        <span class="s2">"caspar_host"</span><span class="p">:</span> <span class="s2">"192.168.1.100"</span><span class="p">,</span>  <span class="c1"># IP address of your CasparCG server</span>
+        <span class="s2">"caspar_port"</span><span class="p">:</span> <span class="mi">5250</span><span class="p">,</span>              <span class="c1"># Default AMCP port</span>
+        <span class="s2">"caspar_osc_port"</span><span class="p">:</span> <span class="mi">6251</span><span class="p">,</span>          <span class="c1"># Unique OSC feedback UDP port</span>
+        <span class="s2">"caspar_channel"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"caspar_feed_layer"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">"live_source"</span><span class="p">:</span> <span class="s2">"DECKLINK 2"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">)</span>
 
@@ -1236,10 +1236,10 @@
 <p>In your <code>settings/services.py</code>, bind the channel ID to a playout service running on a specific worker:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nebula.settings.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ServiceSettings</span>
 
-<span class="n">PLAY1</span> <span class="o">=</span> <span class="s2">&quot;&lt;settings&gt;&lt;id_channel&gt;1&lt;/id_channel&gt;&lt;/settings&gt;&quot;</span>
+<span class="n">PLAY1</span> <span class="o">=</span> <span class="s2">"&lt;settings&gt;&lt;id_channel&gt;1&lt;/id_channel&gt;&lt;/settings&gt;"</span>
 
 <span class="n">SERVICES</span> <span class="o">=</span> <span class="p">[</span>
-   <span class="n">ServiceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;play&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;play1&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;worker&quot;</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">PLAY1</span><span class="p">),</span>
+   <span class="n">ServiceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"play"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"play1"</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"worker"</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">PLAY1</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
 <h3 id="3-expose-ports-in-docker-compose">3. Expose Ports in Docker Compose</h3>
@@ -1247,7 +1247,7 @@
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">worker</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;6251:6251/udp&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"6251:6251/udp"</span>
 </code></pre></div>
 <h3 id="4-enable-osc-in-casparcgconfig">4. Enable OSC in <code>casparcg.config</code></h3>
 <p>On your CasparCG Server machine, open the <code>casparcg.config</code> configuration file and add the worker IP and OSC port to the predefined clients section:</p>
@@ -1267,15 +1267,15 @@
 <hr />
 <h2 id="send-to-playout-ingestion">Send-to-Playout Ingestion</h2>
 <p>To copy files automatically or manually from production storage to playout storage, configure a transcode/copy Action inside <code>settings/actions.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;settings&gt;</span>
 <span class="w">    </span><span class="nt">&lt;allow_if&gt;</span>True<span class="nt">&lt;/allow_if&gt;</span>
-<span class="w">    </span><span class="nt">&lt;task</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;ffmpeg&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;filter:a&quot;</span><span class="nt">&gt;</span>&quot;loudnorm=I=-23&quot;<span class="nt">&lt;/param&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ar&quot;</span><span class="nt">&gt;</span>48000<span class="nt">&lt;/param&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;c:v&quot;</span><span class="nt">&gt;</span>&quot;copy&quot;<span class="nt">&lt;/param&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;c:a&quot;</span><span class="nt">&gt;</span>&quot;pcm_s16le&quot;<span class="nt">&lt;/param&gt;</span>
-<span class="w">        </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">storage=</span><span class="s">&quot;asset.get_playout_storage(1)&quot;</span><span class="w"> </span><span class="na">direct=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[asset.get_playout_path(1)]]&gt;</span><span class="nt">&lt;/output&gt;</span>
+<span class="w">    </span><span class="nt">&lt;task</span><span class="w"> </span><span class="na">mode=</span><span class="s">"ffmpeg"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">"filter:a"</span><span class="nt">&gt;</span>"loudnorm=I=-23"<span class="nt">&lt;/param&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">"ar"</span><span class="nt">&gt;</span>48000<span class="nt">&lt;/param&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">"c:v"</span><span class="nt">&gt;</span>"copy"<span class="nt">&lt;/param&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">"c:a"</span><span class="nt">&gt;</span>"pcm_s16le"<span class="nt">&lt;/param&gt;</span>
+<span class="w">        </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">storage=</span><span class="s">"asset.get_playout_storage(1)"</span><span class="w"> </span><span class="na">direct=</span><span class="s">"1"</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[asset.get_playout_path(1)]]&gt;</span><span class="nt">&lt;/output&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/task&gt;</span>
 <span class="nt">&lt;/settings&gt;</span>
 </code></pre></div>
@@ -1394,7 +1394,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
