@@ -31,7 +31,8 @@ The following files are expected (but not required) to be present in your `setti
 
 | Filename | Purpose |
 | --- | --- |
-| `settings.py` | The main settings template defining system-wide configurations, channel mappings, and timezones. |
+| `settings.py` | The main settings template defining system-wide configurations |
+| `channels.py` | Playout channels configuration |
 | `storages.py` | Defines storage volumes (production, playout, local, or shared Samba/NFS mounts). |
 | `services.py` | Registers the system services (transcoders, monitors, playout controllers) assigned to workers. |
 | `actions.py` | Defines specific actions such as automated transcoding, copying, or moving files. |
