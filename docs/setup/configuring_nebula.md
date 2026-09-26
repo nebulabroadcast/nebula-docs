@@ -27,7 +27,7 @@ Whenever you modify settings templates, you must apply them to the system's data
 
 ## Configuration Files Map
 
-The following files are expected (but not required) to be present in your `settings/` directory:
+The following files are expected (but not required) to be present in your `settings/` directory. If the files are not found the default settings will be applied.
 
 | Filename | Purpose |
 | --- | --- |

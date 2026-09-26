@@ -17,7 +17,7 @@ Before configuring CasparCG playout, ensure:
 
 ## Controlling CasparCG from Docker
 
-If your Nebula `play` service runs inside a Docker container, you must configure bi-directional communication between the service and the playout server:
+If your Nebula `play` service runs inside a Docker container, you must configure bi-directional communication between the service and the playout server in `docker-compose.yml`:
 * **Outbound control:** Nebula commands CasparCG via AMCP protocol (TCP port `5250` by default).
 * **Inbound feedback:** CasparCG streams state feedback back to the Nebula worker via OSC protocol (UDP ports).
 
