@@ -34,11 +34,10 @@ You can customize how files are scanned, matched, and processed using XML attrib
 | `id_folder` | Optional | `12` | The Nebula folder ID (e.g. Movie, Episode, Song) where new assets will be created. |
 | `recursive` | Optional | `TRUE` | If `TRUE`, scans and watches subdirectories recursively. |
 | `hidden` | Optional | `FALSE` | If `TRUE`, files and folders starting with a dot (`.`) are ignored. |
-| `quarantine_time` | Optional | `10` | Seconds a file must remain unchanged before import starts. Prevents incomplete files from being processed. |
 | `case_sensitive_exts`| Optional | `FALSE`| Enables case-sensitive matching for monitored file extensions. |
 
-!!! tip "Quarantine Time"
-    Always configure `quarantine_time` (e.g., to `30` or `60` seconds) if media files are uploaded via slow FTP/network channels. This guarantees Nebula won't try to analyze or move a file while it's still being written.
+!!! note "Files still being written"
+    A new asset is created as soon as its file appears, even while it is still being copied (e.g. over FTP). Its status stays *Creating* until the file hasn't changed for 15 seconds; only then does the `meta` service turn it *Online*. The former `quarantine_time` attribute is no longer used and is ignored.
 
 ---
 
