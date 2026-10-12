@@ -71,6 +71,7 @@ nav:
     - Storage Configuration: setup/storages.md
     - Watch Folders: setup/watchfolders.md
     - Media Upload & Import: setup/import.md
+    - Asset Validators: setup/validators.md
     - CasparCG Playout: setup/casparcg.md
   - User & Operations Guide:
     - Linear Playout Scheduling: usage/linear-broadcasting.md

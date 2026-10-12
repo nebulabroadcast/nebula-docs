@@ -39,7 +39,7 @@ Without an upload storage, the uploaded file **replaces the asset's media file d
 3. The `meta` service probes the new file, updates technical metadata and turns the asset *Online*.
 
 !!! note
-    The asset must already have a target storage and path. These are usually assigned when the asset is created (for example by an asset validator plugin).
+    The asset must already have a target storage and path. For assets created manually, these are assigned by the [asset validator](validators.md) when the asset is first saved. Without them, uploads and imports for the asset fail.
 
 ---
 
