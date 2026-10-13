@@ -151,9 +151,11 @@ A file whose name matches no asset stays in the directory, and an error file wit
 
 ### Failed Imports
 
-If transcoding fails, the asset is left untouched: its current media file and status don't change. The source file is moved to the `failed/` subdirectory of the import directory, together with a `.txt` file containing the error reported by FFmpeg. The import job in the jobs list shows the first line of the error.
+If an import fails (for example FFmpeg can't transcode the file, or the asset's file can't be written), the asset is left untouched: its current media file and status don't change. The source file is moved to the `failed/` subdirectory of the import directory, together with a `.txt` file containing the error (for transcoding errors, the one reported by FFmpeg). The import job in the jobs list shows the first line of the error.
 
 To retry, move the file from `failed/` back to the import directory, or upload it again.
+
+If the source file can't be moved out of the import directory at all, the reason is written to a `.txt` file next to it, and the file is skipped until it changes.
 
 ---
 
