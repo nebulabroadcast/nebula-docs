@@ -10,12 +10,12 @@ The **Asset Browser** is the primary catalog explorer for searching and organizi
 
 * **Tabs, Views and Filters:** Keep several searches open in tabs, each with its own view, filters and columns. See [Asset Browser](../usage/asset-browser.md) for the details.
 * **Asset Browser List:** Displays assets matching the tab's view and filters. Clicking an asset opens it in the **Asset Detail** panel.
-* **Context Menu:** Right-clicking assets allows operators to:
-    * Archive or restore assets.
-    * Move assets to the trash or recover them.
-    * Trigger technical metadata extraction (re-analyze files).
-    * Manually dispatch assets to background workflows (e.g., "Send to Playout").
-* **Drag-and-Drop Ingest/Export:** If supported by the OS and client container, you can drag media assets directly from the Browser into external applications (such as DaVinci Resolve, Adobe Premiere Pro, or local file system folders).
+* **Context Menu:** Right-clicking the selected assets offers:
+    * *Filter by* the clicked column's value (adds a condition to the tab).
+    * *Send to...*: start an action (e.g. a transcode or sending to playout) for the selection.
+    * *Reset*: reload the assets' technical metadata from their files.
+    * *Archive* and *Trash*.
+* **Drag and Drop:** Drag assets to the Scheduler to create events, or to the Rundown to add items.
 
 ---
 
@@ -30,22 +30,22 @@ The **Asset Detail** panel acts as the main metadata editor and proxy media play
 
 ## 3. Jobs Monitor
 
-The **Jobs** module provides real-time monitoring of all active background operations:
-* Displays progress percentages and operational states (Queued, Running, Completed, Failed).
-* Allows administrators to abort active jobs or restart failed actions.
+The **Jobs** page lists background jobs (transcoding, sending to playout...) in three views: *Active*, *Finished* and *Failed*.
+* Shows each job's asset, action, service, times and status message.
+* Pending and running jobs can be aborted, finished and failed ones restarted.
+* Clicking a job's priority cycles it through *Hold*, *Lowest* ... *Highest*; workers pick up higher-priority jobs first.
 
 ---
 
 ## 4. Scheduler
 
-The **Scheduler** displays a calendar-style week overview for planning linear broadcast channels:
-* **Event Creation:** Drag assets from the Browser directly into the calendar grid to schedule new programming blocks.
-* **Empty Blocks:** Drag the **Calendar +** icon from the toolbar to create an empty scheduling block for manual metadata entry.
-* **End-Time Flexibility:** Events do not have locked end-times. They can be moved, resized, or adjusted directly from their context menus.
-* **Open Rundown:** Double-clicking an event (or selecting *Open Rundown* from the menu) switches the view to the granular, item-by-item Daily Rundown.
+The **Scheduler** shows a week of events for the selected channel. See [Linear Broadcasting](../usage/linear-broadcasting.md#scheduler) for the details.
+* **Event Creation:** Drag assets from the Browser into the calendar, or drag the *Empty event* icon from the toolbar.
+* **Moving Events:** Events have no fixed end time; drag them to a new start time.
+* **Open Rundown:** Double-click an event to open its day in the Rundown, scrolled to the event.
 
 ---
 
-## 5. Daily Rundown
+## 5. Rundown
 
-The **Rundown** module manages the daily playlist for linear playout channels. It allows operators to arrange assets, configure playout modes, and directly control live video servers.
+The **Rundown** is the item-by-item playlist of one channel's broadcast day. Three toggles in its toolbar add tools on top of the read-only view: **Edit** (change the rundown), **Control** (playout controls and on-air clock) and **Plugins** (playout plugins). See [Linear Broadcasting](../usage/linear-broadcasting.md#rundown).

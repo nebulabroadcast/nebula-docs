@@ -39,6 +39,7 @@ Assets sharing identical default properties and metadata fields belong to the sa
 * **Fill:** Short-form interstitial media (e.g., promotional clips) used to bridge programming gaps.
 * **Trailer:** A promotional teaser for movies or shows.
 * **Jingle:** A brief channel identifier or audio watermark.
+* **Graphic:** Still images and graphics (e.g. logos, lower thirds).
 * **Commercial / Teleshopping:** Paid advertisements (short-form or infomercial formats).
 * **Dataset:** A container for non-video files (such as XML schedule imports, CSV logs).
 * **Incoming:** The default temporary landing folder for newly detected, unclassified assets.

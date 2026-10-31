@@ -1,92 +1,117 @@
 # Docker-Based Installation
 
-This guide walks you through deploying a local or production-ready instance of Nebula using Docker and Docker Compose. 
-
-By containerizing Nebula, you ensure a reproducible environment where services can scale horizontally.
+This guide deploys Nebula with Docker Compose. The
+[nebula-tutorial](https://github.com/nebulabroadcast/nebula-tutorial) repository
+is a complete, working example of this setup: clone it and follow its README
+for a step-by-step walkthrough.
 
 ---
 
 ## Architecture Overview
 
-The Nebula system is composed of several Dockerized components that communicate over a shared network
+A Docker deployment consists of four containers:
+
+| Service | Image | Role |
+| --- | --- | --- |
+| `postgres` | `postgres:18` | Database: assets, events, settings, users, jobs |
+| `redis` | `redis:alpine` | Cache, sessions and the real-time message bus |
+| `server` | `nebulabroadcast/nebula-server` | Web interface and API (port 80 in the container) |
+| `worker` | `nebulabroadcast/nebula-worker` | Runs the services: watch folders, metadata, transcoding, playout control |
+
+More workers can run on other machines; each one starts the services assigned
+to its hostname (see [Configuring Nebula](../setup/configuring_nebula.md)).
 
 ---
 
 ## Directory Layout
 
-Before starting the containers, prepare a project folder layout based on the example in
-https://github.com/nebulabroadcast/nebula-tutorial repository
-
 ```text
-nebula/
+nebula-tutorial/
 ├── docker-compose.yml
-├── plugins/
-│    ├── powerpack/
-│    └── dramatica/
-├── settings/
-│   ├── settings.py
-│   ├── storages.py
-│   ├── services.py
-│   └── folders.py
-└── storage/
+├── Makefile           # shortcuts: make setup, make reload, make update...
+├── plugins/           # server and CLI plugins, mounted at /plugins
+├── settings/          # settings templates, mounted at /settings
+│   ├── actions.py
+│   ├── channels.py
+│   └── services.py
+└── storage/           # media storage 1, mounted at /mnt/nebula_01
 ```
 
 ---
 
 ## Docker Compose Configuration
 
-Create a `docker-compose.yml` file with the following services. This matches the playout OSC settings and local/shared storage mounting criteria.
-
 ```yaml
-
 volumes:
   db: {}
 
 services:
   postgres:
     image: postgres:18
-    container_name: nebula-postgres
-    restart: unless-stopped
     environment:
-      POSTGRES_DB: nebula
-      POSTGRES_USER: nebula
-      POSTGRES_PASSWORD: nebula
+      - "POSTGRES_USER=nebula"
+      - "POSTGRES_PASSWORD=nebula"
+      - "POSTGRES_DB=nebula"
     volumes:
-      - db:/var/lib/postgresql
+      - "/etc/localtime:/etc/localtime:ro"
+      - "db:/var/lib/postgresql"
+    restart: unless-stopped
 
   redis:
-    image: redis:latest
-    container_name: nebula-redis
+    image: redis:alpine
     restart: unless-stopped
 
-  backend:
-    image: nebulabroadcast/nebula:latest
-    container_name: nebula-backend
-    restart: unless-stopped
+  server:
+    image: nebulabroadcast/nebula-server:latest
     ports:
       - "4455:80"
     volumes:
-      - ./settings:/app/settings
-      - ./storage:/mnt/nebula_01
+      - "/etc/localtime:/etc/localtime:ro"
+      - "./plugins:/plugins"
+      - "./settings:/settings"
+      - "./storage:/mnt/nebula_01"
     depends_on:
-      - postgres
       - redis
+      - postgres
 
   worker:
     image: nebulabroadcast/nebula-worker:latest
-    container_name: worker
-    restart: unless-stopped
-    privileged: true # Grants system admin capacity to handle external storage mounts
-    cap_add:
-      - SYS_ADMIN
-      - DAC_READ_SEARCH
-    ports:
-      # Expose UDP ports for CasparCG playout controller OSC feedback
-      - "6251:6251/udp"
-      - "6252:6252/udp"
+    hostname: worker
     volumes:
-      - ./storage:/mnt/nebula_01
+      - "/etc/localtime:/etc/localtime:ro"
+      - "./storage:/mnt/nebula_01"
+    privileged: true
     depends_on:
-      - postgres
-      - redis
+      - server
 ```
+
+* The worker's `hostname` matters: services are assigned to workers by
+  hostname (`host="worker"` in `services.py`).
+* `privileged: true` lets the worker mount network storages itself
+  (see [Storages](../setup/storages.md)). A worker that only uses local
+  storages doesn't need it.
+* A worker controlling CasparCG also needs its OSC ports published
+  (see [CasparCG Playout](../setup/casparcg.md)).
+
+---
+
+## First Start
+
+```bash
+docker compose up -d
+make setup
+```
+
+`make setup` creates the database schema and applies the settings templates
+(see [Configuring Nebula](../setup/configuring_nebula.md)). The interface is
+then available at `http://<host>:4455`.
+
+On an empty database, setup creates the user `admin` with the password
+`nebula`: change it right away (`make password`). `make user` creates more
+users (both are CLI plugins from the tutorial's `plugins/cli`).
+
+## Updating
+
+`make update` pulls the latest images and recreates the server and worker
+containers. Release notes are on
+[GitHub](https://github.com/nebulabroadcast/nebula/releases).

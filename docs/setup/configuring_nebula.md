@@ -2,7 +2,7 @@
 
 Nebula's configuration is managed through a **settings template**, which is a set of Python modules that define various system, storage, and service parameters. This template allows you to customize Nebula's behavior to suit your specific broadcast requirements.
 
-All settings templates are stored in the `settings/` directory at the root of the repository or deployment path.
+Settings templates are Python files in the `settings/` directory of your deployment, mounted into the server container at `/settings`.
 
 ---
 
@@ -28,16 +28,19 @@ Whenever you modify settings templates, you must apply them to the system's data
 
 ## Configuration Files Map
 
-The following files are expected (but not required) to be present in your `settings/` directory:
+Setup loads every `.py` file in `/settings` and looks for these variables. The file names are only a convention; one variable per file of the same name keeps things easy to find:
 
-| Filename | Purpose |
-| --- | --- |
-| `settings.py` | The main settings template defining system-wide configurations |
-| `channels.py` | Playout channels configuration |
-| `storages.py` | Defines storage volumes (production, playout, local, or shared Samba/NFS mounts). |
-| `services.py` | Registers the system services (transcoders, monitors, playout controllers) assigned to workers. |
-| `actions.py` | Defines specific actions such as automated transcoding, copying, or moving files. |
-| `folders.py` | Customizes asset folders (e.g. Movies, Songs, Promos) and fields shown in metadata editors. |
-| `cs.py` | Additional classification schemes (CS) for assets (useful for regulatory tracking). |
-| `meta_types.py`| Defines custom metadata types (e.g. aspect ratio, language tracks) for assets. |
-| `views.py` | Configures custom views and search filters in the asset browser. |
+| Variable | Conventional file | Purpose |
+| --- | --- | --- |
+| `SETTINGS` | `settings.py` | System settings (site name, proxy and upload storages, SSO providers, SMTP...) |
+| `CHANNELS` | `channels.py` | Playout channels |
+| `STORAGES` | `storages.py` | Storage volumes (local or Samba shares), see [Storages](storages.md) |
+| `SERVICES` | `services.py` | Services and the worker (hostname) each one runs on |
+| `ACTIONS` | `actions.py` | Actions such as transcoding or sending to playout |
+| `FOLDERS` | `folders.py` | Asset folders and the fields shown in the metadata editor |
+| `META_TYPES` | `meta_types.py` | Metadata types (keys, classes, defaults) |
+| `CS` | `cs.py` | Additional classification schemes |
+| `VIEWS` | `views.py` | Views offered in the asset browser |
+
+!!! warning "Lists replace the defaults"
+    `SETTINGS` and `META_TYPES` are dictionaries merged into the defaults, so they only need the keys you change or add. Every other variable is a list that **replaces** the built-in defaults as a whole: a `FOLDERS` list with one folder leaves the site with exactly one folder. Variables you don't define keep their defaults.

@@ -10,15 +10,32 @@ To enable watch folders, you must configure and run a single instance of the `wa
 
 ## Minimal Configuration
 
-In your service settings template (`settings/services.py`), define a watch service configuration with monitored storage paths. 
+In `settings/services.py`, add a service of type `watch` whose settings list the watched directories. 
 
-For each detected file, a database asset will be created in the default **Incoming** folder (usually ID `12`):
+For each new file, an asset is created in the folder given by `id_folder` (by default *Incoming*):
 
 ```xml
 <service>
-    <folder id_storage="1" path="media.dir/movies"/>
-    <folder id_storage="2" path="media.dir/episodes"/>
+    <folder id_storage="1" path="media.dir/movies" id_folder="1"/>
+    <folder id_storage="1" path="media.dir/episodes" id_folder="2"/>
 </service>
+```
+
+Register it with the XML as its settings:
+
+```python
+from nebula.settings.models import ServiceSettings
+
+WATCH = """
+<service>
+    <folder id_storage="1" path="media.dir/movies" id_folder="1"/>
+</service>
+"""
+
+SERVICES = [
+    ServiceSettings(id=2, type="watch", name="watch", host="worker", settings=WATCH),
+    # ... the other services
+]
 ```
 
 ---
@@ -27,14 +44,16 @@ For each detected file, a database asset will be created in the default **Incomi
 
 You can customize how files are scanned, matched, and processed using XML attributes within the `<folder>` tag:
 
-| Attribute | Type | Default | Description |
+| Attribute | Required | Default | Description |
 | --- | --- | --- | --- |
-| `id_storage` | Required | - | The target storage ID to write metadata or files to. |
-| `path` | Required | - | The subdirectory path within that storage to monitor. |
-| `id_folder` | Optional | `12` | The Nebula folder ID (e.g. Movie, Episode, Song) where new assets will be created. |
-| `recursive` | Optional | `TRUE` | If `TRUE`, scans and watches subdirectories recursively. |
-| `hidden` | Optional | `FALSE` | If `TRUE`, files and folders starting with a dot (`.`) are ignored. |
-| `case_sensitive_exts`| Optional | `FALSE`| Enables case-sensitive matching for monitored file extensions. |
+| `id_storage` | yes | - | ID of the storage to watch. |
+| `path` | yes | - | Directory to watch, relative to the storage root. |
+| `id_folder` | no | `12` | Folder new assets are created in (`12` is *Incoming* in the default folders). |
+| `recursive` | no | off | Watch subdirectories too. |
+| `hidden` | no | off | Also pick up hidden files and directories (names starting with a dot). |
+
+!!! warning "Boolean attributes"
+    Any value turns `recursive` and `hidden` on, `recursive="FALSE"` included. To turn one off, leave the attribute out.
 
 !!! note "Files still being written"
     A new asset is created as soon as its file appears, even while it is still being copied (e.g. over FTP). Its status stays *Creating* until the file hasn't changed for 15 seconds; only then does the `meta` service turn it *Online*. The former `quarantine_time` attribute is no longer used and is ignored.

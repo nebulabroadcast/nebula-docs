@@ -24,7 +24,7 @@ It serves as the central orchestrator for media assets, scheduling, and playout 
     
     Customize settings templates, register local/shared storage points, and set up watch folders.
     
-    [:octicons-arrow-right-24: Setup settings.py](setup/configuring_nebula.md) · [Configure Storages](setup/storages.md)
+    [:octicons-arrow-right-24: Settings System](setup/configuring_nebula.md) · [Configure Storages](setup/storages.md)
 
 -   **:material-play-circle: Playout Integration**
     

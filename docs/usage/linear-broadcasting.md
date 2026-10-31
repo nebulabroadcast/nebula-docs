@@ -1,48 +1,47 @@
-Linear broadcasting
-===================
+# Linear Broadcasting
 
-Scheduler
----------
+## Scheduler
 
-Scheduler module displays all scheduled events in a week view.
+The scheduler shows a week of events of the selected channel.
 
+The quickest way to schedule is to drag an asset from the browser into the calendar. A new event is created at the drop position, with the asset's title and description, and the asset becomes the event's first item. Which folders can be dropped is set per channel (`scheduler_accepts`).
 
-On the most basic level, new events can be scheduled by just dragging and dropping assets from the Browser
-into the scheduler calendar. It this case, a new event is created at the desired time/position,
-assets descriptive metadata such as title and description attached to the event and within the event,
-a new item from the selected asset is created.
+To create an empty event, drag the *Empty event* icon from the scheduler toolbar into the calendar; a dialog asks for its metadata.
 
-It is also possible to create an empty event by drag-and-dropping **calendar&nbsp;+** icon from the scheduler toolbar to the calendar.
-In this case, a dialog window requesting metadata entry pops-up.
+Events have no fixed end time: an event lasts until the next one starts. Drag an event to move it, or change its start time with *Edit* in its context menu. *Delete* removes it.
 
-Note that events don't have fixed end-time. You can move events freely using drag-n-drop
-(or by setting the start time in the event detail dialog accessible from the context menu).
+Holding <kbd>Ctrl</kbd> while dropping an episode of a series opens *Schedule series*: the following episodes are scheduled into a recurring slot (daily or weekly on chosen days, until a date or for a number of episodes).
 
-Double-click the event to switch to the [rundown](#rundown) view and scroll to the chosen event.
-The same can be achieved by selecting *Open rundown* entry from the event pop-up menu.
+The toolbar also has *Apply template*, which fills the week from a scheduling template (if the channel has any), and *Delete unaired*, which removes the week's events that haven't been broadcast yet.
 
-Rundown
--------
+Double-click an event to open its day in the [rundown](#rundown), scrolled to the event.
 
-The rundown module allows item-by-item scheduling of the daily playlist.
-Items can be created by dragging supported assets from the browser area to the rundown.
+Editing the schedule requires the `scheduler_edit` permission for the channel.
 
+## Rundown
 
-On-air controls
----------------
+The rundown is the item-by-item playlist of one broadcast day. With all toggles off, it shows the day's events and items with their scheduled times. Three toggles in the toolbar add tools; they can be combined, and each is offered only to users with the permission for the current channel:
+
+| Toggle | Adds | Permission |
+| --- | --- | --- |
+| **Edit** | Dragging assets from the browser into events, reordering items, the special items toolbar | `rundown_edit` |
+| **Control** | On-air controls with the clock and progress, cueing by double-click | `mcr` |
+| **Plugins** | The channel's playout plugins | `mcr` |
+
+The toggles are remembered in the browser. Items and events can also be changed from their context menu (edit, run mode, delete).
+
+## On-air controls
 
 Since video servers take time to load a video file for playout, Nebula always loads the next clip while playing the current one.
-The clip currently playing is highlighted red, while the next one (cued) is green. When the on-air mode is active, double-clicking 
-the item in the rundown view cues it (and its playback starts while the current one is finished).
+The clip currently playing is highlighted red, the next one (cued) green. With **Control** on, double-clicking an item cues it; it starts when the current one finishes.
 
-Additionally, you may use buttons from the on-air section to control the playback.
+The on-air panel shows the current and the cued item with their remaining times, and these buttons:
 
-- **Take** plays an item which has been cued
-- **Freeze** pauses or resumes playback of the current clip
+- **Take** plays the cued item now
+- **Freeze** pauses or resumes the current clip
 - **Retake** replays the current item from the beginning
-- **Abort** stops the current clips and pause at the cued one's first frame
-- **Left arrow** cue the previous item
-- **Right arrow** cue the next item
+- **Abort** stops the current clip and pauses on the first frame of the cued one
+- **Cue prev** / **Cue next** cue the previous or next item
 
 By default, the application plays items one after another, but this behavior can be changed to create loops within the blocks,
 wait conditions and so on using *run modes* both for events and items.
@@ -63,17 +62,14 @@ wait conditions and so on using *run modes* both for events and items.
    to advance to the next item.
  - **Skip**: The item won't be played and its duration is not accounted to the rundown computed time.
    This mode is useful for scheduling "backup" clips for the case live event ends earlier than expected.
- - **Loop**: The item plays in a loop until the *Take* button is used to advance to the next item
 
-Special items
--------------
+## Special items
 
-Icons from the middle group of the toolbar can be dragged to the rundown to create the following special items:
+With **Edit** on, a toolbar with these special items appears; drag them into the rundown:
 
 ### Placeholders
 
-Placeholders can be automatically replaced by items using "solve" command from the context menu. 
-This functionality depends on the site configuration and may not be available.
+A placeholder reserves time for content that isn't known yet. If the channel has solvers configured, *Solve using ...* in the placeholder's context menu replaces it with real items.
 
 ### Live events
 

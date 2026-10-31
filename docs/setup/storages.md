@@ -32,19 +32,23 @@ In a professional broadcast workflow, dividing high-capacity raw media from low-
 
 Storages in Nebula are referenced by their ID (e.g. `1`, `2`). Nebula expects storages to be mounted at `/mnt/{site_name}_{id}` on each system node (e.g. `/mnt/nebula_01`). 
 
-When configured via settings, Nebula attempts to mount and maintain the mount point automatically. All media assets are referenced inside the database by their storage ID and relative file path.
+Storages use one of two protocols:
+
+* `local`: the directory is already there (a host folder bind-mounted into the containers, or a share the host mounts itself, e.g. NFS).
+* `samba`: the worker mounts the SMB/CIFS share at `/mnt/{site_name}_{id}` itself and remounts it when it drops.
+
+All media assets are referenced inside the database by their storage ID and relative file path.
 
 ---
 
 ## Storage Scenarios
 
 ### Local Storage
-If you have a single-node deployment, you don't need to configure mounting dynamically in the database. Instead, mark the storage as local and bind-mount a host folder directly into the container.
+On a single machine, bind-mount a host folder into both the server and the worker container. A storage that isn't listed in `STORAGES` is treated as local, so this needs no settings at all:
 
-In your `docker-compose.yml`, mount the local directory to both backend and worker services:
 ```yaml
 services:
-  backend:
+  server:
     volumes:
       - ./nebula-storage:/mnt/nebula_01
       
@@ -53,8 +57,8 @@ services:
       - ./nebula-storage:/mnt/nebula_01
 ```
 
-### Shared Network Storage (Samba / NFS)
-To use network shares, define them in the `settings/storages.py` file:
+### Shared Network Storage (Samba)
+To have the worker mount an SMB/CIFS share, define it in `settings/storages.py`:
 
 ```python
 from nebula.settings.models import StorageSettings

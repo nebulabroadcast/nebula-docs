@@ -16,7 +16,7 @@ copyright: Copyright &copy; 2013 - 2026 imm studios, z.s.
 
 theme:
   name: material
-  logo: images/logo.svg
+  logo: images/logo-wide.svg
   favicon: images/favicon.svg
   palette:
     - media: "(prefers-color-scheme: dark)"
