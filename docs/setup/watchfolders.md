@@ -52,8 +52,10 @@ You can customize how files are scanned, matched, and processed using XML attrib
 | `recursive` | no | off | Watch subdirectories too. |
 | `hidden` | no | off | Also pick up hidden files and directories (names starting with a dot). |
 
-!!! warning "Boolean attributes"
-    Any value turns `recursive` and `hidden` on, `recursive="FALSE"` included. To turn one off, leave the attribute out.
+`recursive` and `hidden` take `TRUE`/`FALSE` (also `1`/`0`, `yes`/`no`; case doesn't matter).
+
+!!! warning "Older worker images"
+    nebula-worker 6.1.0 and older turn these attributes on with any value, `recursive="FALSE"` included. On those, leave the attribute out to keep it off.
 
 !!! note "Files still being written"
     A new asset is created as soon as its file appears, even while it is still being copied (e.g. over FTP). Its status stays *Creating* until the file hasn't changed for 15 seconds; only then does the `meta` service turn it *Online*. The former `quarantine_time` attribute is no longer used and is ignored.
