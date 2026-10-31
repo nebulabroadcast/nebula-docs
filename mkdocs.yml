@@ -16,6 +16,8 @@ copyright: Copyright &copy; 2013 - 2026 imm studios, z.s.
 
 theme:
   name: material
+  logo: images/logo.svg
+  favicon: images/favicon.svg
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -41,6 +43,14 @@ theme:
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:

@@ -8,20 +8,21 @@ All settings templates are stored in the `settings/` directory at the root of th
 
 ## Applying Configuration Changes
 
-Whenever you modify settings templates, you must apply them to the system's database. To do this, execute `make setup` in the root of the Nebula repository (or use the Docker Compose equivalent):
+Whenever you modify settings templates, you must apply them to the system's database. With the [nebula-tutorial](https://github.com/nebulabroadcast/nebula-tutorial) setup, run `make setup` in its root directory, or call the commands it wraps directly:
 
-=== "Bare Metal"
+=== "make"
     ```bash
     make setup
     ```
 
 === "Docker Compose"
     ```bash
-    docker compose exec backend make setup
+    docker compose exec server python -m setup
+    docker compose exec server ./manage reload
     ```
 
 !!! note "What does `make setup` do?"
-    This command compiles the Python settings templates, serializes them, stores the configuration in the PostgreSQL database, and signals the backend and active workers to reload their configurations.
+    `python -m setup` loads the Python settings templates, validates them and stores the configuration in the PostgreSQL database. `./manage reload` then reloads the server so it picks up the new settings. Workers read their settings when they start: restart them (`make restart`) after changing channels, services or actions.
 
 ---
 
