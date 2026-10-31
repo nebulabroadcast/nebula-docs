@@ -18,8 +18,8 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <link rel="icon" href="../../images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -92,8 +92,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -292,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../usage/linear-broadcasting/" class="md-tabs__link">
+        <a href="../../usage/asset-browser/" class="md-tabs__link">
           
   
   
@@ -328,8 +327,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     Nebula Broadcast
@@ -802,10 +800,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#shared-network-storage-samba-nfs" class="md-nav__link">
+  <a href="#shared-network-storage-samba" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Shared Network Storage (Samba / NFS)
+        Shared Network Storage (Samba)
       
     </span>
   </a>
@@ -1004,6 +1002,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../usage/asset-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../usage/linear-broadcasting/" class="md-nav__link">
         
   
@@ -1171,10 +1197,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#shared-network-storage-samba-nfs" class="md-nav__link">
+  <a href="#shared-network-storage-samba" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Shared Network Storage (Samba / NFS)
+        Shared Network Storage (Samba)
       
     </span>
   </a>
@@ -1267,23 +1293,27 @@
 <hr />
 <h2 id="configuration">Configuration</h2>
 <p>Storages in Nebula are referenced by their ID (e.g. <code>1</code>, <code>2</code>). Nebula expects storages to be mounted at <code>/mnt/{site_name}_{id}</code> on each system node (e.g. <code>/mnt/nebula_01</code>). </p>
-<p>When configured via settings, Nebula attempts to mount and maintain the mount point automatically. All media assets are referenced inside the database by their storage ID and relative file path.</p>
+<p>Storages use one of two protocols:</p>
+<ul>
+<li><code>local</code>: the directory is already there (a host folder bind-mounted into the containers, or a share the host mounts itself, e.g. NFS).</li>
+<li><code>samba</code>: the worker mounts the SMB/CIFS share at <code>/mnt/{site_name}_{id}</code> itself and remounts it when it drops.</li>
+</ul>
+<p>All media assets are referenced inside the database by their storage ID and relative file path.</p>
 <hr />
 <h2 id="storage-scenarios">Storage Scenarios</h2>
 <h3 id="local-storage">Local Storage</h3>
-<p>If you have a single-node deployment, you don't need to configure mounting dynamically in the database. Instead, mark the storage as local and bind-mount a host folder directly into the container.</p>
-<p>In your <code>docker-compose.yml</code>, mount the local directory to both backend and worker services:
+<p>On a single machine, bind-mount a host folder into both the server and the worker container. A storage that isn't listed in <code>STORAGES</code> is treated as local, so this needs no settings at all:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">server</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nebula-storage:/mnt/nebula_01</span>
 
 <span class="w">  </span><span class="nt">worker</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nebula-storage:/mnt/nebula_01</span>
-</code></pre></div></p>
-<h3 id="shared-network-storage-samba-nfs">Shared Network Storage (Samba / NFS)</h3>
-<p>To use network shares, define them in the <code>settings/storages.py</code> file:</p>
+</code></pre></div>
+<h3 id="shared-network-storage-samba">Shared Network Storage (Samba)</h3>
+<p>To have the worker mount an SMB/CIFS share, define it in <code>settings/storages.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nebula.settings.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">StorageSettings</span>
 
 <span class="n">STORAGES</span> <span class="o">=</span> <span class="p">[</span>
@@ -1410,10 +1440,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

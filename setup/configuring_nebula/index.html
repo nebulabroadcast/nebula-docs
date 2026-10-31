@@ -18,8 +18,8 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <link rel="icon" href="../../images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -92,8 +92,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -292,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../usage/linear-broadcasting/" class="md-tabs__link">
+        <a href="../../usage/asset-browser/" class="md-tabs__link">
           
   
   
@@ -328,8 +327,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     Nebula Broadcast
@@ -926,6 +924,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../usage/asset-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../usage/linear-broadcasting/" class="md-nav__link">
         
   
@@ -1049,69 +1075,90 @@
 
 <h1 id="configuring-nebula">Configuring Nebula</h1>
 <p>Nebula's configuration is managed through a <strong>settings template</strong>, which is a set of Python modules that define various system, storage, and service parameters. This template allows you to customize Nebula's behavior to suit your specific broadcast requirements.</p>
-<p>All settings templates are stored in the <code>settings/</code> directory at the root of the repository or deployment path.</p>
+<p>Settings templates are Python files in the <code>settings/</code> directory of your deployment, mounted into the server container at <code>/settings</code>.</p>
 <hr />
 <h2 id="applying-configuration-changes">Applying Configuration Changes</h2>
-<p>Whenever you modify settings templates, you must apply them to the system's database. To do this, execute <code>make setup</code> in the root of the Nebula repository (or use the Docker Compose equivalent):</p>
-<p>=== "Bare Metal"
-    <div class="highlight"><pre><span></span><code>make<span class="w"> </span>setup
-</code></pre></div></p>
-<p>=== "Docker Compose"
-    <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>backend<span class="w"> </span>make<span class="w"> </span>setup
-</code></pre></div></p>
+<p>Whenever you modify settings templates, you must apply them to the system's database. With the <a href="https://github.com/nebulabroadcast/nebula-tutorial">nebula-tutorial</a> setup, run <code>make setup</code> in its root directory, or call the commands it wraps directly:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">make</label><label for="__tabbed_1_2">Docker Compose</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>setup
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>server<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>setup
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>server<span class="w"> </span>./manage<span class="w"> </span>reload
+</code></pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">What does <code>make setup</code> do?</p>
-<p>This command compiles the Python settings templates, serializes them, stores the configuration in the PostgreSQL database, and signals the backend and active workers to reload their configurations.</p>
+<p><code>python -m setup</code> loads the Python settings templates, validates them and stores the configuration in the PostgreSQL database. <code>./manage reload</code> then reloads the server so it picks up the new settings. Workers read their settings when they start: restart them (<code>make restart</code>) after changing channels, services or actions.</p>
 </div>
 <hr />
 <h2 id="configuration-files-map">Configuration Files Map</h2>
-<p>The following files are expected (but not required) to be present in your <code>settings/</code> directory:</p>
+<p>Setup loads every <code>.py</code> file in <code>/settings</code> and looks for these variables. The file names are only a convention; one variable per file of the same name keeps things easy to find:</p>
 <table>
 <thead>
 <tr>
-<th>Filename</th>
+<th>Variable</th>
+<th>Conventional file</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><code>SETTINGS</code></td>
 <td><code>settings.py</code></td>
-<td>The main settings template defining system-wide configurations</td>
+<td>System settings (site name, proxy and upload storages, SSO providers, SMTP...)</td>
 </tr>
 <tr>
+<td><code>CHANNELS</code></td>
 <td><code>channels.py</code></td>
-<td>Playout channels configuration</td>
+<td>Playout channels</td>
 </tr>
 <tr>
+<td><code>STORAGES</code></td>
 <td><code>storages.py</code></td>
-<td>Defines storage volumes (production, playout, local, or shared Samba/NFS mounts).</td>
+<td>Storage volumes (local or Samba shares), see <a href="../storages/">Storages</a></td>
 </tr>
 <tr>
+<td><code>SERVICES</code></td>
 <td><code>services.py</code></td>
-<td>Registers the system services (transcoders, monitors, playout controllers) assigned to workers.</td>
+<td>Services and the worker (hostname) each one runs on</td>
 </tr>
 <tr>
+<td><code>ACTIONS</code></td>
 <td><code>actions.py</code></td>
-<td>Defines specific actions such as automated transcoding, copying, or moving files.</td>
+<td>Actions such as transcoding or sending to playout</td>
 </tr>
 <tr>
+<td><code>FOLDERS</code></td>
 <td><code>folders.py</code></td>
-<td>Customizes asset folders (e.g. Movies, Songs, Promos) and fields shown in metadata editors.</td>
+<td>Asset folders and the fields shown in the metadata editor</td>
 </tr>
 <tr>
-<td><code>cs.py</code></td>
-<td>Additional classification schemes (CS) for assets (useful for regulatory tracking).</td>
-</tr>
-<tr>
+<td><code>META_TYPES</code></td>
 <td><code>meta_types.py</code></td>
-<td>Defines custom metadata types (e.g. aspect ratio, language tracks) for assets.</td>
+<td>Metadata types (keys, classes, defaults)</td>
 </tr>
 <tr>
+<td><code>CS</code></td>
+<td><code>cs.py</code></td>
+<td>Additional classification schemes</td>
+</tr>
+<tr>
+<td><code>VIEWS</code></td>
 <td><code>views.py</code></td>
-<td>Configures custom views and search filters in the asset browser.</td>
+<td>Views offered in the asset browser</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="admonition-title">Lists replace the defaults</p>
+<p><code>SETTINGS</code> and <code>META_TYPES</code> are dictionaries merged into the defaults, so they only need the keys you change or add. Every other variable is a list that <strong>replaces</strong> the built-in defaults as a whole: a <code>FOLDERS</code> list with one folder leaves the site with exactly one folder. Variables you don't define keep their defaults.</p>
+</div>
 
 
 
@@ -1212,10 +1259,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

@@ -18,8 +18,8 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <link rel="icon" href="../../images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -92,8 +92,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -292,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../usage/linear-broadcasting/" class="md-tabs__link">
+        <a href="../../usage/asset-browser/" class="md-tabs__link">
           
   
   
@@ -328,8 +327,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     Nebula Broadcast
@@ -560,10 +558,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-daily-rundown" class="md-nav__link">
+  <a href="#5-rundown" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Daily Rundown
+        5. Rundown
       
     </span>
   </a>
@@ -959,6 +957,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../usage/asset-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../usage/linear-broadcasting/" class="md-nav__link">
         
   
@@ -1086,10 +1112,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-daily-rundown" class="md-nav__link">
+  <a href="#5-rundown" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Daily Rundown
+        5. Rundown
       
     </span>
   </a>
@@ -1119,15 +1145,16 @@
 <h2 id="1-asset-browser">1. Asset Browser</h2>
 <p>The <strong>Asset Browser</strong> is the primary catalog explorer for searching and organizing your media collection.</p>
 <ul>
-<li><strong>Asset Browser List:</strong> Displays assets matching the selected view. Double-clicking an asset opens it in the <strong>Asset Detail</strong> panel.</li>
-<li><strong>Context Menu:</strong> Right-clicking assets allows operators to:<ul>
-<li>Archive or restore assets.</li>
-<li>Move assets to the trash or recover them.</li>
-<li>Trigger technical metadata extraction (re-analyze files).</li>
-<li>Manually dispatch assets to background workflows (e.g., "Send to Playout").</li>
+<li><strong>Tabs, Views and Filters:</strong> Keep several searches open in tabs, each with its own view, filters and columns. See <a href="../../usage/asset-browser/">Asset Browser</a> for the details.</li>
+<li><strong>Asset Browser List:</strong> Displays assets matching the tab's view and filters. Clicking an asset opens it in the <strong>Asset Detail</strong> panel.</li>
+<li><strong>Context Menu:</strong> Right-clicking the selected assets offers:<ul>
+<li><em>Filter by</em> the clicked column's value (adds a condition to the tab).</li>
+<li><em>Send to...</em>: start an action (e.g. a transcode or sending to playout) for the selection.</li>
+<li><em>Reset</em>: reload the assets' technical metadata from their files.</li>
+<li><em>Archive</em> and <em>Trash</em>.</li>
 </ul>
 </li>
-<li><strong>Drag-and-Drop Ingest/Export:</strong> If supported by the OS and client container, you can drag media assets directly from the Browser into external applications (such as DaVinci Resolve, Adobe Premiere Pro, or local file system folders).</li>
+<li><strong>Drag and Drop:</strong> Drag assets to the Scheduler to create events, or to the Rundown to add items.</li>
 </ul>
 <hr />
 <h2 id="2-asset-detail-panel">2. Asset Detail Panel</h2>
@@ -1138,19 +1165,19 @@
 </ul>
 <hr />
 <h2 id="3-jobs-monitor">3. Jobs Monitor</h2>
-<p>The <strong>Jobs</strong> module provides real-time monitoring of all active background operations:
-* Displays progress percentages and operational states (Queued, Running, Completed, Failed).
-* Allows administrators to abort active jobs or restart failed actions.</p>
+<p>The <strong>Jobs</strong> page lists background jobs (transcoding, sending to playout...) in three views: <em>Active</em>, <em>Finished</em> and <em>Failed</em>.
+* Shows each job's asset, action, service, times and status message.
+* Pending and running jobs can be aborted, finished and failed ones restarted.
+* Clicking a job's priority cycles it through <em>Hold</em>, <em>Lowest</em> ... <em>Highest</em>; workers pick up higher-priority jobs first.</p>
 <hr />
 <h2 id="4-scheduler">4. Scheduler</h2>
-<p>The <strong>Scheduler</strong> displays a calendar-style week overview for planning linear broadcast channels:
-* <strong>Event Creation:</strong> Drag assets from the Browser directly into the calendar grid to schedule new programming blocks.
-* <strong>Empty Blocks:</strong> Drag the <strong>Calendar +</strong> icon from the toolbar to create an empty scheduling block for manual metadata entry.
-* <strong>End-Time Flexibility:</strong> Events do not have locked end-times. They can be moved, resized, or adjusted directly from their context menus.
-* <strong>Open Rundown:</strong> Double-clicking an event (or selecting <em>Open Rundown</em> from the menu) switches the view to the granular, item-by-item Daily Rundown.</p>
+<p>The <strong>Scheduler</strong> shows a week of events for the selected channel. See <a href="../../usage/linear-broadcasting/#scheduler">Linear Broadcasting</a> for the details.
+* <strong>Event Creation:</strong> Drag assets from the Browser into the calendar, or drag the <em>Empty event</em> icon from the toolbar.
+* <strong>Moving Events:</strong> Events have no fixed end time; drag them to a new start time.
+* <strong>Open Rundown:</strong> Double-click an event to open its day in the Rundown, scrolled to the event.</p>
 <hr />
-<h2 id="5-daily-rundown">5. Daily Rundown</h2>
-<p>The <strong>Rundown</strong> module manages the daily playlist for linear playout channels. It allows operators to arrange assets, configure playout modes, and directly control live video servers.</p>
+<h2 id="5-rundown">5. Rundown</h2>
+<p>The <strong>Rundown</strong> is the item-by-item playlist of one channel's broadcast day. Three toggles in its toolbar add tools on top of the read-only view: <strong>Edit</strong> (change the rundown), <strong>Control</strong> (playout controls and on-air clock) and <strong>Plugins</strong> (playout plugins). See <a href="../../usage/linear-broadcasting/#rundown">Linear Broadcasting</a>.</p>
 
 
 
@@ -1251,10 +1278,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

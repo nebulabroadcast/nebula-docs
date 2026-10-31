@@ -3,18 +3,21 @@
   --md-default-bg-color: #110e16;
   --md-default-bg-color--light: #1a1622;
   --md-default-bg-color--lighter: #221d2c;
-  --md-primary-fg-color: #1b1625;
-  --md-primary-fg-color--light: #2c253b;
-  --md-primary-fg-color--dark: #0f0b16;
+  --md-primary-fg-color: #19161f;
+  --md-primary-fg-color--light: #2e2a38;
+  --md-primary-fg-color--dark: #19161f;
+  --md-primary-bg-color: #d7d4d5;
   --md-accent-fg-color: #a855f7;
   --md-typeset-a-color: #0ed3fe;
 }
 
 /* Light mode overrides */
 :root [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #6b21a8;
-  --md-primary-fg-color--light: #a855f7;
-  --md-primary-fg-color--dark: #4c1d95;
+  /* Header and tabs stay dark like the app; the logo is light-on-dark */
+  --md-primary-fg-color: #19161f;
+  --md-primary-fg-color--light: #2e2a38;
+  --md-primary-fg-color--dark: #19161f;
+  --md-primary-bg-color: #d7d4d5;
   --md-accent-fg-color: #a855f7;
   --md-typeset-a-color: #0284c7;
 }
@@ -24,3 +27,24 @@
   max-width: 78rem;
 }
 
+/* Wide logo: it already says "Nebula Broadcast", so the site name is hidden
+   (the page title still shows on scroll) */
+.md-header__button.md-logo img {
+  height: 2.2rem;
+  width: auto;
+}
+/* With the left sidebar shown, the logo fills its column, so the page title
+   that replaces the site name on scroll lines up with the body text */
+@media screen and (min-width: 76.25em) {
+  .md-header__button.md-logo {
+    box-sizing: border-box;
+    width: 13.1rem;
+    margin-right: 0;
+  }
+  .md-header__title {
+    margin-left: 0;
+  }
+}
+.md-header__topic:first-child {
+  visibility: hidden;
+}

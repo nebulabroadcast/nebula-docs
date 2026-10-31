@@ -18,8 +18,8 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <link rel="icon" href="../../images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -92,8 +92,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -292,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../usage/linear-broadcasting/" class="md-tabs__link">
+        <a href="../../usage/asset-browser/" class="md-tabs__link">
           
   
   
@@ -328,8 +327,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     Nebula Broadcast
@@ -954,6 +952,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../usage/asset-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../usage/linear-broadcasting/" class="md-nav__link">
         
   
@@ -1109,12 +1135,26 @@
 <p>To enable watch folders, you must configure and run a single instance of the <code>watch</code> service in your setup.</p>
 <hr />
 <h2 id="minimal-configuration">Minimal Configuration</h2>
-<p>In your service settings template (<code>settings/services.py</code>), define a watch service configuration with monitored storage paths. </p>
-<p>For each detected file, a database asset will be created in the default <strong>Incoming</strong> folder (usually ID <code>12</code>):</p>
+<p>In <code>settings/services.py</code>, add a service of type <code>watch</code> whose settings list the watched directories. </p>
+<p>For each new file, an asset is created in the folder given by <code>id_folder</code> (by default <em>Incoming</em>):</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;service&gt;</span>
-<span class="w">    </span><span class="nt">&lt;folder</span><span class="w"> </span><span class="na">id_storage=</span><span class="s">"1"</span><span class="w"> </span><span class="na">path=</span><span class="s">"media.dir/movies"</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;folder</span><span class="w"> </span><span class="na">id_storage=</span><span class="s">"2"</span><span class="w"> </span><span class="na">path=</span><span class="s">"media.dir/episodes"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;folder</span><span class="w"> </span><span class="na">id_storage=</span><span class="s">"1"</span><span class="w"> </span><span class="na">path=</span><span class="s">"media.dir/movies"</span><span class="w"> </span><span class="na">id_folder=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;folder</span><span class="w"> </span><span class="na">id_storage=</span><span class="s">"1"</span><span class="w"> </span><span class="na">path=</span><span class="s">"media.dir/episodes"</span><span class="w"> </span><span class="na">id_folder=</span><span class="s">"2"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<p>Register it with the XML as its settings:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nebula.settings.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ServiceSettings</span>
+
+<span class="n">WATCH</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">&lt;service&gt;</span>
+<span class="s2">    &lt;folder id_storage="1" path="media.dir/movies" id_folder="1"/&gt;</span>
+<span class="s2">&lt;/service&gt;</span>
+<span class="s2">"""</span>
+
+<span class="n">SERVICES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ServiceSettings</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"watch"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"watch"</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"worker"</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">WATCH</span><span class="p">),</span>
+    <span class="c1"># ... the other services</span>
+<span class="p">]</span>
 </code></pre></div>
 <hr />
 <h2 id="customizing-folder-behavior">Customizing Folder Behavior</h2>
@@ -1123,7 +1163,7 @@
 <thead>
 <tr>
 <th>Attribute</th>
-<th>Type</th>
+<th>Required</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1131,42 +1171,40 @@
 <tbody>
 <tr>
 <td><code>id_storage</code></td>
-<td>Required</td>
+<td>yes</td>
 <td>-</td>
-<td>The target storage ID to write metadata or files to.</td>
+<td>ID of the storage to watch.</td>
 </tr>
 <tr>
 <td><code>path</code></td>
-<td>Required</td>
+<td>yes</td>
 <td>-</td>
-<td>The subdirectory path within that storage to monitor.</td>
+<td>Directory to watch, relative to the storage root.</td>
 </tr>
 <tr>
 <td><code>id_folder</code></td>
-<td>Optional</td>
+<td>no</td>
 <td><code>12</code></td>
-<td>The Nebula folder ID (e.g. Movie, Episode, Song) where new assets will be created.</td>
+<td>Folder new assets are created in (<code>12</code> is <em>Incoming</em> in the default folders).</td>
 </tr>
 <tr>
 <td><code>recursive</code></td>
-<td>Optional</td>
-<td><code>TRUE</code></td>
-<td>If <code>TRUE</code>, scans and watches subdirectories recursively.</td>
+<td>no</td>
+<td>off</td>
+<td>Watch subdirectories too.</td>
 </tr>
 <tr>
 <td><code>hidden</code></td>
-<td>Optional</td>
-<td><code>FALSE</code></td>
-<td>If <code>TRUE</code>, files and folders starting with a dot (<code>.</code>) are ignored.</td>
-</tr>
-<tr>
-<td><code>case_sensitive_exts</code></td>
-<td>Optional</td>
-<td><code>FALSE</code></td>
-<td>Enables case-sensitive matching for monitored file extensions.</td>
+<td>no</td>
+<td>off</td>
+<td>Also pick up hidden files and directories (names starting with a dot).</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="admonition-title">Boolean attributes</p>
+<p>Any value turns <code>recursive</code> and <code>hidden</code> on, <code>recursive="FALSE"</code> included. To turn one off, leave the attribute out.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Files still being written</p>
 <p>A new asset is created as soon as its file appears, even while it is still being copied (e.g. over FTP). Its status stays <em>Creating</em> until the file hasn't changed for 15 seconds; only then does the <code>meta</code> service turn it <em>Online</em>. The former <code>quarantine_time</code> attribute is no longer used and is ignored.</p>
@@ -1292,10 +1330,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

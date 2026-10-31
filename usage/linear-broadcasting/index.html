@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../setup/casparcg/">
+        <link rel="prev" href="../asset-browser/">
       
       
         <link rel="next" href="../video-preview/">
@@ -18,8 +18,8 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <link rel="icon" href="../../images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -92,8 +92,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Nebula Broadcast" class="md-header__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -292,7 +291,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../asset-browser/" class="md-tabs__link">
           
   
   
@@ -328,8 +327,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Nebula Broadcast" class="md-nav__button md-logo" aria-label="Nebula Broadcast" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../images/logo-wide.svg" alt="logo">
 
     </a>
     Nebula Broadcast
@@ -854,6 +852,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1259,34 +1285,55 @@
 
 
 
-<h1 id="linear-broadcasting">Linear broadcasting</h1>
+<h1 id="linear-broadcasting">Linear Broadcasting</h1>
 <h2 id="scheduler">Scheduler</h2>
-<p>Scheduler module displays all scheduled events in a week view.</p>
-<p>On the most basic level, new events can be scheduled by just dragging and dropping assets from the Browser
-into the scheduler calendar. It this case, a new event is created at the desired time/position,
-assets descriptive metadata such as title and description attached to the event and within the event,
-a new item from the selected asset is created.</p>
-<p>It is also possible to create an empty event by drag-and-dropping <strong>calendar&nbsp;+</strong> icon from the scheduler toolbar to the calendar.
-In this case, a dialog window requesting metadata entry pops-up.</p>
-<p>Note that events don't have fixed end-time. You can move events freely using drag-n-drop
-(or by setting the start time in the event detail dialog accessible from the context menu).</p>
-<p>Double-click the event to switch to the <a href="#rundown">rundown</a> view and scroll to the chosen event.
-The same can be achieved by selecting <em>Open rundown</em> entry from the event pop-up menu.</p>
+<p>The scheduler shows a week of events of the selected channel.</p>
+<p>The quickest way to schedule is to drag an asset from the browser into the calendar. A new event is created at the drop position, with the asset's title and description, and the asset becomes the event's first item. Which folders can be dropped is set per channel (<code>scheduler_accepts</code>).</p>
+<p>To create an empty event, drag the <em>Empty event</em> icon from the scheduler toolbar into the calendar; a dialog asks for its metadata.</p>
+<p>Events have no fixed end time: an event lasts until the next one starts. Drag an event to move it, or change its start time with <em>Edit</em> in its context menu. <em>Delete</em> removes it.</p>
+<p>Holding <kbd>Ctrl</kbd> while dropping an episode of a series opens <em>Schedule series</em>: the following episodes are scheduled into a recurring slot (daily or weekly on chosen days, until a date or for a number of episodes).</p>
+<p>The toolbar also has <em>Apply template</em>, which fills the week from a scheduling template (if the channel has any), and <em>Delete unaired</em>, which removes the week's events that haven't been broadcast yet.</p>
+<p>Double-click an event to open its day in the <a href="#rundown">rundown</a>, scrolled to the event.</p>
+<p>Editing the schedule requires the <code>scheduler_edit</code> permission for the channel.</p>
 <h2 id="rundown">Rundown</h2>
-<p>The rundown module allows item-by-item scheduling of the daily playlist.
-Items can be created by dragging supported assets from the browser area to the rundown.</p>
+<p>The rundown is the item-by-item playlist of one broadcast day. With all toggles off, it shows the day's events and items with their scheduled times. Three toggles in the toolbar add tools; they can be combined, and each is offered only to users with the permission for the current channel:</p>
+<table>
+<thead>
+<tr>
+<th>Toggle</th>
+<th>Adds</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Edit</strong></td>
+<td>Dragging assets from the browser into events, reordering items, the special items toolbar</td>
+<td><code>rundown_edit</code></td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>On-air controls with the clock and progress, cueing by double-click</td>
+<td><code>mcr</code></td>
+</tr>
+<tr>
+<td><strong>Plugins</strong></td>
+<td>The channel's playout plugins</td>
+<td><code>mcr</code></td>
+</tr>
+</tbody>
+</table>
+<p>The toggles are remembered in the browser. Items and events can also be changed from their context menu (edit, run mode, delete).</p>
 <h2 id="on-air-controls">On-air controls</h2>
 <p>Since video servers take time to load a video file for playout, Nebula always loads the next clip while playing the current one.
-The clip currently playing is highlighted red, while the next one (cued) is green. When the on-air mode is active, double-clicking 
-the item in the rundown view cues it (and its playback starts while the current one is finished).</p>
-<p>Additionally, you may use buttons from the on-air section to control the playback.</p>
+The clip currently playing is highlighted red, the next one (cued) green. With <strong>Control</strong> on, double-clicking an item cues it; it starts when the current one finishes.</p>
+<p>The on-air panel shows the current and the cued item with their remaining times, and these buttons:</p>
 <ul>
-<li><strong>Take</strong> plays an item which has been cued</li>
-<li><strong>Freeze</strong> pauses or resumes playback of the current clip</li>
+<li><strong>Take</strong> plays the cued item now</li>
+<li><strong>Freeze</strong> pauses or resumes the current clip</li>
 <li><strong>Retake</strong> replays the current item from the beginning</li>
-<li><strong>Abort</strong> stops the current clips and pause at the cued one's first frame</li>
-<li><strong>Left arrow</strong> cue the previous item</li>
-<li><strong>Right arrow</strong> cue the next item</li>
+<li><strong>Abort</strong> stops the current clip and pauses on the first frame of the cued one</li>
+<li><strong>Cue prev</strong> / <strong>Cue next</strong> cue the previous or next item</li>
 </ul>
 <p>By default, the application plays items one after another, but this behavior can be changed to create loops within the blocks,
 wait conditions and so on using <em>run modes</em> both for events and items.</p>
@@ -1306,13 +1353,11 @@ wait conditions and so on using <em>run modes</em> both for events and items.</p
    to advance to the next item.</li>
 <li><strong>Skip</strong>: The item won't be played and its duration is not accounted to the rundown computed time.
    This mode is useful for scheduling "backup" clips for the case live event ends earlier than expected.</li>
-<li><strong>Loop</strong>: The item plays in a loop until the <em>Take</em> button is used to advance to the next item</li>
 </ul>
 <h2 id="special-items">Special items</h2>
-<p>Icons from the middle group of the toolbar can be dragged to the rundown to create the following special items:</p>
+<p>With <strong>Edit</strong> on, a toolbar with these special items appears; drag them into the rundown:</p>
 <h3 id="placeholders">Placeholders</h3>
-<p>Placeholders can be automatically replaced by items using "solve" command from the context menu. 
-This functionality depends on the site configuration and may not be available.</p>
+<p>A placeholder reserves time for content that isn't known yet. If the channel has solvers configured, <em>Solve using ...</em> in the placeholder's context menu replaces it with real items.</p>
 <h3 id="live-events">Live events</h3>
 <p>When playback reaches the live event, the playout server is switched to its configured live source
 (for example the feed from the studio).</p>
@@ -1424,10 +1469,10 @@ then the part after the lead-out marker is played and finally, the next block st
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>
