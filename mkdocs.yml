@@ -74,6 +74,7 @@ nav:
     - Asset Validators: setup/validators.md
     - CasparCG Playout: setup/casparcg.md
   - User & Operations Guide:
+    - Asset Browser: usage/asset-browser.md
     - Linear Playout Scheduling: usage/linear-broadcasting.md
     - Video Preview & Trimming: usage/video-preview.md
 
