@@ -8,7 +8,8 @@ The Nebula client interface provides access to the media catalog, metadata edito
 
 The **Asset Browser** is the primary catalog explorer for searching and organizing your media collection.
 
-* **Asset Browser List:** Displays assets matching the selected view. Double-clicking an asset opens it in the **Asset Detail** panel.
+* **Tabs, Views and Filters:** Keep several searches open in tabs, each with its own view, filters and columns. See [Asset Browser](../usage/asset-browser.md) for the details.
+* **Asset Browser List:** Displays assets matching the tab's view and filters. Clicking an asset opens it in the **Asset Detail** panel.
 * **Context Menu:** Right-clicking assets allows operators to:
     * Archive or restore assets.
     * Move assets to the trash or recover them.
