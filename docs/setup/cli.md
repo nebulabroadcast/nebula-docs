@@ -126,5 +126,7 @@ docker compose exec backend python -m cli report formats
 
 Typer commands are ordinary functions. Put `@run_async` under `@app.command()` for a command that is `async def`: it loads the Nebula settings and runs the coroutine.
 
+A command without `@run_async` runs without the settings: `nebula.settings` is empty there (no folders, channels or meta types). Make the command `async def` with `@run_async` whenever it reads settings or the database.
+
 !!! note "Existing plugins"
     Plugins written for earlier versions keep working. Two things changed: values are converted to the type of the parameter's default (they used to arrive as text), and a word that isn't `key=value` is now an error (it used to be ignored).
