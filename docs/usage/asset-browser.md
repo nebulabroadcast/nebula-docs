@@ -124,6 +124,8 @@ Columns, like filters, belong to the tab, until you pick another view. Save the 
 
 Click a column header to sort by it, click again to reverse. New tabs show the newest assets first.
 
+The Duration column sorts by the duration as it is shown: between the IN and OUT marks when the asset is trimmed.
+
 Not every field can be sorted by: sorting needs a database index, which the administrator sets up for the fields that need one. When a field can't be sorted, a message says so, the tab keeps its order, and the header stops being clickable.
 
 ---

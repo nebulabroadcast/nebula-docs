@@ -168,7 +168,7 @@ A profile defines the target format of an import. These profiles are included:
 | `xdcamhd422-1080i50` | XDCAM HD422 1080i50 (PAL): MPEG-2 4:2:2, 50 Mbps, closed GOP 12, PCM audio |
 | `xdcamhd422-1080i5994` | XDCAM HD422 1080i59.94 (NTSC): MPEG-2 4:2:2, 50 Mbps, closed GOP 15, PCM audio |
 
-Both are meant for `.mxf` asset paths.
+Both are meant for `.mxf` asset paths and output 1920×1080. Sources of another size (4K, 720p, SD, anamorphic HDV...) are scaled to fit, keeping their display aspect ratio, and padded with black bars where the aspect differs (a 4:3 source is pillarboxed).
 
 ### Fast Import
 
@@ -181,6 +181,11 @@ Each profile is a TOML file in the worker's `services/import/profiles/` director
 ```toml
 # "smca": merge several mono audio tracks into one multichannel track
 audio_layout = "smca"
+
+# Output frame size (square pixels). Other sizes are scaled to fit and
+# padded. Leave out to keep the source size.
+width = 1920
+height = 1080
 
 # FFmpeg video options for transcoding
 video_encoding = [
@@ -207,7 +212,6 @@ height = 1080
 ```
 
 !!! note "Current limitations"
-    * Profiles don't scale the video: a 720p source stays 720p.
     * Fast import doesn't check the scan type, so a progressive 1080p25 XDCAM file matches the 1080i50 profile and is copied as is.
     * Audio and image files are not imported.
 
