@@ -22,7 +22,27 @@ A command that fails exits with status `1`. A wrong command name or wrong argume
 
 | Command | What it does |
 |---|---|
+| `adduser` | Creates a user. |
 | `version` | Prints the Nebula version. |
+
+### adduser
+
+```bash
+docker compose exec backend python -m cli adduser
+docker compose exec backend python -m cli adduser jane --email jane@example.com --no-admin
+```
+
+Without arguments the command asks for the login, an optional e-mail, whether the user is an administrator, and the password (typed twice, not shown). Anything given on the command line isn't asked for:
+
+| Argument | Meaning |
+|---|---|
+| `login` | Login name. |
+| `--email` | E-mail address. |
+| `--full-name` | Full name. |
+| `--admin` / `--no-admin` | Whether the user has administrator rights. |
+| `--password` | The password. Prefer the prompt: a password on the command line ends up in the shell history. |
+
+The password must have at least 8 characters, and the login must not be taken. A user who isn't an administrator has no permissions until an administrator grants some in the web interface.
 
 ---
 
