@@ -8,7 +8,7 @@
 <link href="../watchfolders/" rel="prev"/>
 <link href="../validators/" rel="next"/>
 <link href="../../images/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.8.0" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.8.1" name="generator"/>
 <title>Media Upload &amp; Import - Nebula Broadcast</title>
 <link href="../../assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
@@ -880,13 +880,18 @@
 </tr>
 </tbody>
 </table>
-<p>Both are meant for <code>.mxf</code> asset paths.</p>
+<p>Both are meant for <code>.mxf</code> asset paths and output 1920×1080. Sources of another size (4K, 720p, SD, anamorphic HDV...) are scaled to fit, keeping their display aspect ratio, and padded with black bars where the aspect differs (a 4:3 source is pillarboxed).</p>
 <h3 id="fast-import">Fast Import</h3>
 <p>If the source video already matches the profile (for example an XDCAM HD422 1080i50 file imported with the <code>xdcamhd422-1080i50</code> profile), the video stream is copied instead of re-encoded. Only the audio is converted. This makes importing files that are already in the house format nearly instant.</p>
 <h3 id="profile-files">Profile Files</h3>
 <p>Each profile is a TOML file in the worker's <code>services/import/profiles/</code> directory, named after the profile (<code>&lt;name&gt;.toml</code>). The profiles are loaded when the import service starts; an action that uses an unknown profile is skipped and an error is logged.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># "smca": merge several mono audio tracks into one multichannel track</span>
 <span class="n">audio_layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"smca"</span>
+
+<span class="c1"># Output frame size (square pixels). Other sizes are scaled to fit and</span>
+<span class="c1"># padded. Leave out to keep the source size.</span>
+<span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1920</span>
+<span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1080</span>
 
 <span class="c1"># FFmpeg video options for transcoding</span>
 <span class="n">video_encoding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
@@ -914,7 +919,6 @@
 <div class="admonition note">
 <p class="admonition-title">Current limitations</p>
 <ul>
-<li>Profiles don't scale the video: a 720p source stays 720p.</li>
 <li>Fast import doesn't check the scan type, so a progressive 1080p25 XDCAM file matches the 1080i50 profile and is copied as is.</li>
 <li>Audio and image files are not imported.</li>
 </ul>
@@ -967,6 +971,6 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+<script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
 </body>
 </html>
