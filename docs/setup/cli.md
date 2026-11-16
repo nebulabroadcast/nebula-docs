@@ -57,13 +57,13 @@ plugins/
     └── report.py
 ```
 
-Each file defines a class based on `nebula.plugins.CLIPlugin`. Its `name` is the command name, and the class docstring is the description shown in the command list.
+Each file defines a class based on `nebula.plugins.CLIPlugin`. Its `name` is the command name, and the class docstring is the description shown in the command list. The built-in commands are written the same way.
 
 If two plugins have the same `name`, the first one found is used and a warning is printed. A site command with the name of a built-in command replaces it, also with a warning.
 
-### A simple command
+### A command
 
-The plugin has an `async def main` method. Its parameters are the command's arguments, passed as `key=value`:
+The plugin has an `async def main` method. Its parameters are the command's arguments:
 
 ```python
 import nebula
@@ -74,59 +74,75 @@ class Cleanup(nebula.plugins.CLIPlugin):
 
     name = "cleanup"
 
-    async def main(self, days=30, dry=False):
+    async def main(self, folder: int, days: int = 30, dry: bool = False):
         ...
 ```
 
 ```bash
-docker compose exec backend python -m cli cleanup days=7 dry=true
+docker compose exec backend python -m cli cleanup 5 --days 7 --dry
 ```
 
-* `--days=7` works the same as `days=7`.
-* A value is converted to the type of the parameter's default: `days` arrives as the integer `7`, `dry` as `True`. Booleans accept `true`, `false`, `1`, `0`, `yes` and `no`. A parameter without a default, or with `None`, receives the text as written.
-* An argument the method doesn't have is an error that lists the available ones. A method with `**kwargs` accepts any argument.
+* A parameter **without a default** is a positional argument and must be given (`folder`).
+* A parameter **with a default** is an option: `--days 7`. A boolean is a flag: `--dry`, and `--no-dry` to turn it off.
+* Type hints give the types. A parameter without a type hint takes the type of its default; without either, it is text.
+* An underscore in a parameter name is a dash on the command line: `retry_failed` is `--retry-failed`.
+* The method's docstring, or the class's, is shown by `--help`, together with the arguments.
+* The settings are loaded before `main` runs, so `nebula.settings` and `nebula.db` are ready to use.
+
+Arguments can also be written as `key=value`, the form older plugins were called with:
+
+```bash
+docker compose exec backend python -m cli cleanup folder=5 days=7 dry=true
+```
+
+Booleans accept `true`, `false`, `1`, `0`, `yes` and `no`. A `main` with `**kwargs` receives every `key=value` word it has no parameter for, as text.
 
 ### A command with sub-commands
 
-For sub-commands, flags and positional arguments, give the plugin an `app` attribute holding a [Typer](https://typer.tiangolo.com/) application. It is used instead of `main`:
+A plugin **without** `main` is a group. Every public `async def` method of the class is a sub-command, with arguments by the same rules:
 
 ```python
-import typer
-
 import nebula
-from cli.run import run_async
-
-app = typer.Typer()
-
-
-@app.command()
-@run_async
-async def export(channel: int, days: int = 7, verbose: bool = False):
-    """Export the schedule of a channel."""
-    ...
-
-
-@app.command()
-def formats():
-    """List the export formats."""
-    ...
 
 
 class Report(nebula.plugins.CLIPlugin):
     """Schedule reports."""
 
     name = "report"
-    app = app
+
+    async def export(self, channel: int, days: int = 7, verbose: bool = False):
+        """Export the schedule of a channel."""
+        ...
+
+    async def formats(self):
+        """List the export formats."""
+        ...
 ```
 
 ```bash
+docker compose exec backend python -m cli report
 docker compose exec backend python -m cli report export 1 --days 14 --verbose
 docker compose exec backend python -m cli report formats
 ```
 
-Typer commands are ordinary functions. Put `@run_async` under `@app.command()` for a command that is `async def`: it loads the Nebula settings and runs the coroutine.
+Methods whose names start with an underscore, and methods that aren't `async def`, are not commands: use them as helpers.
 
-A command without `@run_async` runs without the settings: `nebula.settings` is empty there (no folders, channels or meta types). Make the command `async def` with `@run_async` whenever it reads settings or the database.
+### Help texts and choices
+
+The command line is built with [Typer](https://typer.tiangolo.com/). A plugin doesn't need to import it, but can, to describe an argument further:
+
+```python
+from typing import Annotated
+
+import typer
+
+
+async def main(
+    self,
+    days: Annotated[int, typer.Option(help="Age of the assets to remove.")] = 30,
+):
+    ...
+```
 
 !!! note "Existing plugins"
-    Plugins written for earlier versions keep working. Two things changed: values are converted to the type of the parameter's default (they used to arrive as text), and a word that isn't `key=value` is now an error (it used to be ignored).
+    Plugins written for earlier versions keep working. Two things changed: values are converted to the type of the parameter's default (they used to arrive as text), and a word that isn't one of the command's arguments is now an error (it used to be ignored).
