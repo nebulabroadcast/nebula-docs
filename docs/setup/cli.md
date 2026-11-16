@@ -84,18 +84,13 @@ docker compose exec backend python -m cli cleanup 5 --days 7 --dry
 
 * A parameter **without a default** is a positional argument and must be given (`folder`).
 * A parameter **with a default** is an option: `--days 7`. A boolean is a flag: `--dry`, and `--no-dry` to turn it off.
-* Type hints give the types. A parameter without a type hint takes the type of its default; without either, it is text.
+* Type hints give the types, so write them. `typing.Annotated[..., typer.Option(help=...)]` adds a description of an argument.
 * An underscore in a parameter name is a dash on the command line: `retry_failed` is `--retry-failed`.
 * The method's docstring, or the class's, is shown by `--help`, together with the arguments.
 * The settings are loaded before `main` runs, so `nebula.settings` and `nebula.db` are ready to use.
 
-Arguments can also be written as `key=value`, the form older plugins were called with:
-
-```bash
-docker compose exec backend python -m cli cleanup folder=5 days=7 dry=true
-```
-
-Booleans accept `true`, `false`, `1`, `0`, `yes` and `no`. A `main` with `**kwargs` receives every `key=value` word it has no parameter for, as text.
+!!! note
+    Older versions took arguments as `key=value` (`folder=5 dry=true`). That form is no longer accepted: use `--folder 5 --dry`.
 
 ### A command with sub-commands
 
