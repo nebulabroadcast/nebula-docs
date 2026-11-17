@@ -24,6 +24,7 @@ A command that fails exits with status `1`. A wrong command name or wrong argume
 |---|---|
 | `adduser` | Creates a user. |
 | `passwd` | Sets a new password of a user. |
+| `thumbnails` | Counts asset thumbnails, and makes the missing ones. |
 | `version` | Prints the Nebula version. |
 
 ### adduser
@@ -54,6 +55,19 @@ docker compose exec backend python -m cli passwd jane
 Sets a new password of an existing user, for example when they have forgotten it or the administrator account is locked out. The command asks for the login when it isn't given, and for the new password (typed twice, not shown) unless `--password` is given. The password must have at least 8 characters.
 
 The user is logged out everywhere: every open session of theirs ends.
+
+### thumbnails
+
+```bash
+docker compose exec backend python -m cli thumbnails status
+docker compose exec backend python -m cli thumbnails sync
+docker compose exec backend python -m cli thumbnails sync --limit 1000
+```
+
+* `status` counts the assets that can have a [thumbnail](thumbnails.md), and how many of theirs are ready, failed, stale (made for an older file, poster frame or marks) or missing.
+* `sync` makes the missing and stale thumbnails of online assets, newest assets first, one at a time. It can be stopped and started again. `--limit` stops after that many; `--retry-failed` also tries again the files that couldn't be read before.
+
+Thumbnails are made anyway the first time someone looks at an asset, so `sync` is only needed to fill a library in advance.
 
 ---
 
@@ -150,5 +164,5 @@ async def main(
     ...
 ```
 
-!!! note "Existing plugins"
-    Plugins written for earlier versions keep working. Two things changed: values are converted to the type of the parameter's default (they used to arrive as text), and a word that isn't one of the command's arguments is now an error (it used to be ignored).
+!!! note "Plugins written for earlier versions"
+    They keep working without a change to their code, but they are called differently: `--days 7` instead of `days=7`. Values now arrive converted to the type of the parameter's default (they used to arrive as text), so a check like `if dry == "true"` has to become `if dry`. A word that isn't one of the command's arguments is now an error (it used to be ignored).

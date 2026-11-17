@@ -107,9 +107,15 @@ make setup
 then available at `http://<host>:4455`.
 
 On an empty database, setup creates the user `admin` with the password
-`nebula`: change it right away (`make password`, a CLI plugin from the
-tutorial's `plugins/cli`). More users are created in the web interface, or
-with the built-in [`adduser`](../setup/cli.md#adduser) command.
+`nebula`: change it right away with the built-in
+[`passwd`](../setup/cli.md#passwd) command:
+
+```bash
+docker compose exec backend python -m cli passwd admin
+```
+
+More users are created in the web interface, or with
+[`adduser`](../setup/cli.md#adduser).
 
 ## Updating
 
