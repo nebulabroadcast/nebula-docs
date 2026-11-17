@@ -763,6 +763,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../setup/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Line Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/thumbnails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thumbnails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../setup/casparcg/" class="md-nav__link">
         
   
@@ -1022,6 +1078,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thumbnails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thumbnails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1287,6 +1360,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thumbnails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thumbnails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1367,14 +1457,14 @@
 <p>From the top: the <strong>tabs</strong> (with <strong>+</strong> for a new one), the <strong>filter bar</strong> (with <strong>⟳</strong> to reload), and the assets. The asset you click opens in the editor on the right.</p>
 <hr />
 <h2 id="tabs">Tabs</h2>
-<p>Each tab is its own browser: it has a <strong>view</strong>, its own <strong>filters</strong>, <strong>search</strong>, <strong>sort</strong> and <strong>columns</strong>, and remembers its scroll position and which rows are selected.</p>
+<p>Each tab is its own browser: it has a <strong>view</strong>, its own <strong>filters</strong>, <strong>search</strong>, <strong>sort</strong>, <strong>columns</strong> and <strong>thumbnails</strong> setting, and remembers its scroll position and which rows are selected.</p>
 <ul>
 <li><strong>New tab:</strong> the <strong>+</strong> at the right end of the tab bar. The new tab starts with the view of the tab you were in, as the view defines it (without the filters you added).</li>
 <li><strong>Close a tab:</strong> the <strong>×</strong> on the tab, or a middle click. The last tab can't be closed.</li>
 <li><strong>Switching tabs</strong> is instant. Nothing is reloaded, and you come back to the same rows at the same scroll position.</li>
 <li><strong>The tab label</strong> is the view's name, followed by the search, if there is one.</li>
 </ul>
-<p>Your tabs (views, filters, searches, sorts and columns) are restored when you reload the page. Rows, scroll positions and selections are not.</p>
+<p>Your tabs (views, filters, searches, sorts, columns and thumbnails) are restored when you reload the page. Rows, scroll positions and selections are not.</p>
 <div class="admonition note">
 <p class="admonition-title">Tabs and your own views live in the web browser</p>
 <p>They are stored in the web browser you use, not on the server. Another computer, another web browser or a private window starts with one tab of the first view, and none of your own views. On a shared computer, everyone who logs in with the same web browser shares the same tabs and views.</p>
@@ -1391,7 +1481,7 @@
 <h3 id="saving-your-own-views">Saving your own views</h3>
 <p>When a tab shows something you'll want again, save it:</p>
 <ul>
-<li><strong>Save as new view...</strong> at the bottom of the view list: give it a name. It keeps everything the tab shows: filters, search, sort, columns and column widths. The tab then shows the new view.</li>
+<li><strong>Save as new view...</strong> at the bottom of the view list: give it a name. It keeps everything the tab shows: filters, search, sort, columns, column widths and thumbnails. The tab then shows the new view.</li>
 <li><strong>Save changes to &lt;view&gt;</strong> appears when the tab shows one of your views and you've changed something in it.</li>
 <li><strong>Rename</strong> (pencil) and <strong>delete</strong> (bin) are next to each of your views.</li>
 </ul>
@@ -1468,10 +1558,13 @@
 <p>In the popover, switch to <strong>Columns</strong>:</p>
 <ul>
 <li><strong>Reorder</strong> columns by dragging them in the list.</li>
-<li><strong>Hide</strong> a column with its <strong>×</strong>.</li>
+<li><strong>Hide</strong> a column with its <strong>×</strong>. The title column can't be hidden: it names the asset.</li>
 <li><strong>Add</strong> a column by clicking a field below the list (type in the filter bar to find it).</li>
 </ul>
 <p>Columns, like filters, belong to the tab, until you pick another view. Save the tab as your own view to keep them.</p>
+<h3 id="thumbnails">Thumbnails</h3>
+<p><strong>Show thumbnails</strong>, at the top of the Columns panel, puts a small picture of each asset at the start of its title. It is off in the site's views; turn it on in a tab, and save the tab as your own view to keep it on.</p>
+<p>The picture is the asset's <a href="../video-preview/#poster-frame">poster frame</a>, or a frame near its beginning. Assets without a picture (audio, text, virtual assets, or a file that can't be read) show a placeholder, and so does an asset whose picture is still being made. See <a href="../../setup/thumbnails/">Thumbnails</a> for how they are made.</p>
 <p><strong>Widths:</strong> drag the right edge of a column header to resize it, double-click the edge to return to the automatic width. Widths are remembered per view, so every tab with that view uses them. The last column fills the rest and can't be resized.</p>
 <hr />
 <h2 id="sorting">Sorting</h2>

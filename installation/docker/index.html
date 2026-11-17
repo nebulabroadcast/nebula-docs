@@ -870,6 +870,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../setup/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Line Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/thumbnails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thumbnails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../setup/casparcg/" class="md-nav__link">
         
   
@@ -1254,8 +1310,12 @@ make<span class="w"> </span>setup
 (see <a href="../../setup/configuring_nebula/">Configuring Nebula</a>). The interface is
 then available at <code>http://&lt;host&gt;:4455</code>.</p>
 <p>On an empty database, setup creates the user <code>admin</code> with the password
-<code>nebula</code>: change it right away (<code>make password</code>). <code>make user</code> creates more
-users (both are CLI plugins from the tutorial's <code>plugins/cli</code>).</p>
+<code>nebula</code>: change it right away with the built-in
+<a href="../../setup/cli/#passwd"><code>passwd</code></a> command:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>backend<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>cli<span class="w"> </span>passwd<span class="w"> </span>admin
+</code></pre></div>
+<p>More users are created in the web interface, or with
+<a href="../../setup/cli/#adduser"><code>adduser</code></a>.</p>
 <h2 id="updating">Updating</h2>
 <p><code>make update</code> pulls the latest images and recreates the server and worker
 containers. Release notes are on
