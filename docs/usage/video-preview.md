@@ -6,8 +6,9 @@ The video preview player provides the asset detail interface with tools to view 
 
 ## Poster Frame
 
-A **poster frame** is a representative frame extracted from the video file to serve as its search thumbnail (for example, in a Video-on-Demand archive).
-* **How to set:** Navigate to the desired frame in the player timeline, then click the **Set poster frame** button on the toolbar.
+A **poster frame** is a representative frame of the video: the picture of the asset's [thumbnail](../setup/thumbnails.md) in the browser and the rundown, and the frame other systems can use (for example, a Video-on-Demand archive).
+
+* **How to set:** Navigate to the desired frame in the player timeline, then click the **Set poster frame** button on the toolbar. The asset's thumbnail changes to the new frame.
 
 ---
 

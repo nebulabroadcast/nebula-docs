@@ -83,6 +83,7 @@ nav:
     - Media Upload & Import: setup/import.md
     - Asset Validators: setup/validators.md
     - Command Line Tools: setup/cli.md
+    - Thumbnails: setup/thumbnails.md
     - CasparCG Playout: setup/casparcg.md
   - User & Operations Guide:
     - Asset Browser: usage/asset-browser.md

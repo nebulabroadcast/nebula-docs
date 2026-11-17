@@ -30,6 +30,8 @@ The rundown is the item-by-item playlist of one broadcast day. With all toggles 
 
 The toggles are remembered in the browser. Items and events can also be changed from their context menu (edit, run mode, delete).
 
+Every item shows a small picture of its asset before the title (a placeholder for items without one, such as live events); see [Thumbnails](../setup/thumbnails.md).
+
 ## On-air controls
 
 Since video servers take time to load a video file for playout, Nebula always loads the next clip while playing the current one.

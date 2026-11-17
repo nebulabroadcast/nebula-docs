@@ -43,7 +43,7 @@ colleagues and background services change things.
 
 ### Manage media
 
-* **Find anything fast:** Browse the library in [tabs](usage/asset-browser.md#tabs), narrow it down with [search](usage/asset-browser.md#searching) and [filters](usage/asset-browser.md#filters), and keep the combinations you use often as [saved views](usage/asset-browser.md#views).
+* **Find anything fast:** Browse the library in [tabs](usage/asset-browser.md#tabs), with [thumbnails](setup/thumbnails.md) if you like, narrow it down with [search](usage/asset-browser.md#searching) and [filters](usage/asset-browser.md#filters), and keep the combinations you use often as [saved views](usage/asset-browser.md#views).
 * **Describe it your way:** [Folders](basics/concepts.md#folder) give each kind of content (movies, episodes, commercials, jingles...) its own metadata form, and [links between folders](usage/asset-browser.md#links-between-folders) connect related assets, such as a series and its episodes.
 * **Preview and trim in the browser:** Play a proxy of any asset with frame accuracy, [trim](usage/video-preview.md#trimming) it, mark [sub-clips](usage/video-preview.md#sub-clips) and pick a [poster frame](usage/video-preview.md#poster-frame), all [from the keyboard](usage/video-preview.md#keyboard-shortcuts) if you like.
 * **Transcription (coming soon):** Automatic speech-to-text for your assets, so you can search what was said and select a passage straight from the transcript.

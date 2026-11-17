@@ -10,14 +10,14 @@ From the top: the **tabs** (with **+** for a new one), the **filter bar** (with 
 
 ## Tabs
 
-Each tab is its own browser: it has a **view**, its own **filters**, **search**, **sort** and **columns**, and remembers its scroll position and which rows are selected.
+Each tab is its own browser: it has a **view**, its own **filters**, **search**, **sort**, **columns** and **thumbnails** setting, and remembers its scroll position and which rows are selected.
 
 * **New tab:** the **+** at the right end of the tab bar. The new tab starts with the view of the tab you were in, as the view defines it (without the filters you added).
 * **Close a tab:** the **×** on the tab, or a middle click. The last tab can't be closed.
 * **Switching tabs** is instant. Nothing is reloaded, and you come back to the same rows at the same scroll position.
 * **The tab label** is the view's name, followed by the search, if there is one.
 
-Your tabs (views, filters, searches, sorts and columns) are restored when you reload the page. Rows, scroll positions and selections are not.
+Your tabs (views, filters, searches, sorts, columns and thumbnails) are restored when you reload the page. Rows, scroll positions and selections are not.
 
 !!! note "Tabs and your own views live in the web browser"
     They are stored in the web browser you use, not on the server. Another computer, another web browser or a private window starts with one tab of the first view, and none of your own views. On a shared computer, everyone who logs in with the same web browser shares the same tabs and views.
@@ -39,7 +39,7 @@ When the tab's filters or search differ from its view, the filter bar shows a **
 
 When a tab shows something you'll want again, save it:
 
-* **Save as new view...** at the bottom of the view list: give it a name. It keeps everything the tab shows: filters, search, sort, columns and column widths. The tab then shows the new view.
+* **Save as new view...** at the bottom of the view list: give it a name. It keeps everything the tab shows: filters, search, sort, columns, column widths and thumbnails. The tab then shows the new view.
 * **Save changes to &lt;view&gt;** appears when the tab shows one of your views and you've changed something in it.
 * **Rename** (pencil) and **delete** (bin) are next to each of your views.
 
@@ -111,10 +111,16 @@ Every change reloads the tab.
 In the popover, switch to **Columns**:
 
 * **Reorder** columns by dragging them in the list.
-* **Hide** a column with its **×**.
+* **Hide** a column with its **×**. The title column can't be hidden: it names the asset.
 * **Add** a column by clicking a field below the list (type in the filter bar to find it).
 
 Columns, like filters, belong to the tab, until you pick another view. Save the tab as your own view to keep them.
+
+### Thumbnails
+
+**Show thumbnails**, at the top of the Columns panel, puts a small picture of each asset at the start of its title. It is off in the site's views; turn it on in a tab, and save the tab as your own view to keep it on.
+
+The picture is the asset's [poster frame](video-preview.md#poster-frame), or a frame near its beginning. Assets without a picture (audio, text, virtual assets, or a file that can't be read) show a placeholder, and so does an asset whose picture is still being made. See [Thumbnails](../setup/thumbnails.md) for how they are made.
 
 **Widths:** drag the right edge of a column header to resize it, double-click the edge to return to the automatic width. Widths are remembered per view, so every tab with that view uses them. The last column fills the rest and can't be resized.
 
