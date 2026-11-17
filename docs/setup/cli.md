@@ -23,6 +23,7 @@ A command that fails exits with status `1`. A wrong command name or wrong argume
 | Command | What it does |
 |---|---|
 | `adduser` | Creates a user. |
+| `passwd` | Sets a new password of a user. |
 | `version` | Prints the Nebula version. |
 
 ### adduser
@@ -32,7 +33,7 @@ docker compose exec backend python -m cli adduser
 docker compose exec backend python -m cli adduser jane --email jane@example.com --no-admin
 ```
 
-Without arguments the command asks for the login, an optional e-mail, whether the user is an administrator, and the password (typed twice, not shown). Anything given on the command line isn't asked for:
+Without arguments the command asks for the login, an optional e-mail, whether the user is an administrator, and the password (typed twice, not shown). Anything given on the command line isn't asked for. The e-mail is only asked for together with the login, so `adduser jane --no-admin --password ...` runs without stopping:
 
 | Argument | Meaning |
 |---|---|
@@ -43,6 +44,16 @@ Without arguments the command asks for the login, an optional e-mail, whether th
 | `--password` | The password. Prefer the prompt: a password on the command line ends up in the shell history. |
 
 The password must have at least 8 characters, and the login must not be taken. A user who isn't an administrator has no permissions until an administrator grants some in the web interface.
+
+### passwd
+
+```bash
+docker compose exec backend python -m cli passwd jane
+```
+
+Sets a new password of an existing user, for example when they have forgotten it or the administrator account is locked out. The command asks for the login when it isn't given, and for the new password (typed twice, not shown) unless `--password` is given. The password must have at least 8 characters.
+
+The user is logged out everywhere: every open session of theirs ends.
 
 ---
 
